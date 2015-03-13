@@ -11,6 +11,7 @@ The scss files can be compiled on the fly using compass. To use that feature you
 * ruby
 * compass
 * gem bootstrap-sass (using gem install command)
+
 *Usage*
 Run `compass watch` command int the directory that contains _config.rb_ file. As you can see this runs in a infinte loop. To run this command in the background type `compass watch &` command. Whenever changes are being applied to files in the _scss_ directory, _compass_ compiles and replaces them with stale styles in the _webapp/resources/css_ directory thus you can see changes on the website without restarting Tomcat.
 
