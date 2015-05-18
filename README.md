@@ -25,4 +25,4 @@ Run `compass watch` command int the directory that contains _config.rb_ file. As
 * HSQLDB driver
 
 
-#### This readme file is a subject to change  
+#### This readme file is a subject to change
