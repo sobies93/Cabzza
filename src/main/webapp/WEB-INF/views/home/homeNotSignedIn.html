@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!-- <link rel="stylesheet" type="text/css" href="bootstrap.min.css"></link>
+<link rel="stylesheet" type="text/css" href="myStyle.css"></link>
+<meta charset="UTF-8"></meta>-->
+<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400&subset=latin,latin-ext'
+      rel='stylesheet' type='text/css'>
+-->
 <head>
-    <title>Welcome to the Spring MVC Quickstart application! Get started quickly by signing up!</title>
+    <title th:text="#{view.index.title}">Welcome!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <!-- <link href="../../../resources/css/styles.css" rel="stylesheet" media="screen" th:href="@{/resources/css/styles.css}"/> -->
-    <!-- <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" /> -->
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <link href="../../../resources/css/boostrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/boostrap.min.css}"/>
-    
     <link href="../../../resources/css/myStyle.css" rel="stylesheet" media="screen" th:href="@{/resources/css/myStyle.css}"/>
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+    <!--<link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />-->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
 </head>
@@ -30,7 +32,7 @@
 glyphicon glyphicon-euro"></i></a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!-- Collect the nav links, forms, and other content for toggling!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
             <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1"
                  style="text-align:right;">
                 <ul class="nav navbar-nav active">
@@ -47,16 +49,16 @@ glyphicon glyphicon-euro"></i></a>
                 </ul>
 
             </div>
-            <!-- /.navbar-collapse -->
+            <!-- /.navbar-collapse !!!!!!!!-->
         </div>
-        <!-- /.container-fluid -->
+        <!-- /.container-fluid !!!!!!!!!-->
     </nav>
 </div>
 <div class="content slider">
     <div class="slider">
         <h1>Cabzza</h1>
 
-        <h2>sprawdź, która giełda będzie dla ciebie ....</h2>
+        <h2>sprawdź, która inwestycja będzie dla ciebie najlepsza</h2>
     </div>
 </div>
 
@@ -65,36 +67,34 @@ glyphicon glyphicon-euro"></i></a>
 
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <div style="height: 400px;
-  overflow: auto;">
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-                    <div style="height: 40px">dsadas</div>
-
+                <div style="height: 400px; overflow: auto;">
+                    <div style="height: 40px">Firma A</div>
+                    <div style="height: 40px">Firma B</div>
+                    <div style="height: 40px">Firma C</div>
+                    <div style="height: 40px">Firma D</div>
+                    <div style="height: 40px">Firma E</div>
+                    <div style="height: 40px">Firma F</div>
+                    <div style="height: 40px">Firma G</div>
+                    <div style="height: 40px">Firma H</div>
+                    <div style="height: 40px">Firma I</div>
+                    <div style="height: 40px">Firma J</div>
+                    <div style="height: 40px">Firma K</div>
+                    <div style="height: 40px">Firma L</div>
+                    <div style="height: 40px">Firma M</div>
+                    <div style="height: 40px">Firma N</div>
+                    <div style="height: 40px">Firma O</div>
+                    <div style="height: 40px">Firma G</div>
+                    <div style="height: 40px">Firma F</div>
+                    <div style="height: 40px">Firma D</div>
+                    <div style="height: 40px">Firma F</div>
+                    <div style="height: 40px">Firma G</div>
+                    <div style="height: 40px">Firma H</div>
+                    <div style="height: 40px">Firma Y</div>
                 </div>
-
-
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12">
                 <div class="row">
-                    <div class="col-xs-12"><p>dhaskjdhasjkashfjkasdhfsjkfhasdklfashfjkashfaklsd<br/>fdjsklfhasdfjkahsdfjkasdhfjkshdfajksdhfsjka
+                    <div class="col-xs-12"><p>Dokładne dane firmy<br/>dokładne dane firmy
                     </p>
                     </div>
                 </div>
@@ -105,9 +105,9 @@ glyphicon glyphicon-euro"></i></a>
 
                             <div class="col-sm-8 col-xs-12">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Username">
-                                    <input type="text" class="form-control" placeholder="Username">
-                                    <input type="text" class="form-control" placeholder="Username">
+                                    <input type="text" class="form-control" placeholder="Username"></input>
+                                    <input type="text" class="form-control" placeholder="Username"></input>
+                                    <input type="text" class="form-control" placeholder="Username"></input>
                                 </div>
                             </div>
                             <div class="col-sm-4 col-xs-12"></div>
@@ -125,37 +125,11 @@ glyphicon glyphicon-euro"></i></a>
 
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--     <p class="lead"> hajhjhjahjahaj </p>
-<div th:replace="fragments/header :: header">Header</div>
-<div class="container">
-    <div class="text-center">
-        <h1>Cabzza</h1>
-        <p class="lead">
-            Welcome to the Spring MVC Quickstart application!
-            Get started quickly by signing up.
-        </p>
-        <p>
-            <a href="/signup" th:href="@{/signup}" class="btn btn-success btn-lg">Sign up</a>
-            <button type="button" class="btn btn-info">Info</button>
-        </p>
     </div>
-    <div th:replace="fragments/footer :: footer">&copy; 2015 Cabzza Team</div>
-</div> -->
+</div>
+
+
 </body>
-</html>
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="bootstrap.min.js" type="text/javascript"></script>
