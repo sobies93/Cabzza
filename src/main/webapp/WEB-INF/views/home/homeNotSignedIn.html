@@ -13,47 +13,10 @@
     <!--<link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />-->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+        <script src="../../../resources/js/jquery-1.11.3.min.js" th:src="@{/resources/js/jquery-1.11.3.min.js}"></script>
 </head>
 <body>
-
-<div class="container">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="menu container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"><i id="brand-name" class="
-glyphicon glyphicon-euro"></i></a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1"
-                 style="text-align:right;">
-                <ul class="nav navbar-nav active">
-                    <li><a class="btn btn-default" href="#">strona główna</a></li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li><a class="btn btn-default" href="#">inne</a></li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li><a class="btn btn-default " href="#">inne</a></li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li><a class="btn btn-default" href="#">inne</a></li>
-                </ul>
-
-            </div>
-            <!-- /.navbar-collapse !!!!!!!!-->
-        </div>
-        <!-- /.container-fluid !!!!!!!!!-->
-    </nav>
-</div>
+<div th:replace="fragments/header :: header">&nbsp;</div>
 <div class="content slider">
     <div class="slider">
         <h1>Cabzza</h1>
