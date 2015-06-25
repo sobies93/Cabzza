@@ -5,8 +5,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link href="../../../resources/css/styles.css" rel="stylesheet" media="screen" th:href="@{/resources/css/styles.css}"/>
     <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
+        <link href="../../../resources/css/myStyle.css" rel="stylesheet" media="screen" th:href="@{/resources/css/myStyle.css}"/>
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+    <!--<link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />-->
+    <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+        <script src="../../../resources/js/jquery-1.11.3.min.js" th:src="@{/resources/js/jquery-1.11.3.min.js}"></script>
+
 </head>
 <body>
+    <div th:replace="fragments/header :: header">&nbsp;</div>
 <form class="form-narrow form-horizontal" action="#" method="post" th:action="@{/authenticate}">
     <th:block th:if="${param.error != null}">
         <div th:replace="fragments/alert :: alert (type='danger', message='Sign in error. Please try again.')">Alert</div>
