@@ -13,6 +13,8 @@ body {
 
 .btn-default {
     background: transparent;
+    width:100%; 
+    background-color: #336353;
 }
 
 /** {*/
@@ -68,7 +70,13 @@ ul.nav.navbar-nav li a {
 .input-group {
     width: 100%;
 }
-
+.companylist{
+    height: 400px; 
+    overflow: auto;
+}
+.companydiv{
+    height: 40px;
+}
 input {
     width: 100%;
 }
