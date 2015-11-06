@@ -1,8 +1,5 @@
 package com.pri.config;
 
-import java.util.regex.Pattern;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.context.annotation.*;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
