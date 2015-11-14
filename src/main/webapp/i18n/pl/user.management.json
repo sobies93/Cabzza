@@ -1,0 +1,27 @@
+{
+    "user-management": {
+        "home": {
+            "title": "Użytkownicy",
+            "createLabel": "Stwórz nowego użytkownika",
+            "createOrEditLabel": "Stwórz lub edytuj użytkownika"
+        },
+        "delete": {
+            "question": "Na pewno chcesz usunąć użytkonika {{ login }}?"
+        },
+        "detail": {
+            "title": "Użytkownik"
+        },
+        "login": "Login",
+        "firstName": "Imię",
+        "lastName": "Nazwisko",
+        "email": "Email",
+        "activated": "Aktywowany",
+        "deactivated": "Nieaktywowany",
+        "profiles": "Profile",
+        "langKey": "Język",
+        "createdBy": "Utworzony przez",
+        "createdDate": "Data stworzenia",
+        "lastModifiedBy": "Zmodyfikowany przez",
+        "lastModifiedDate": "Data modyfikacji"
+    }
+}

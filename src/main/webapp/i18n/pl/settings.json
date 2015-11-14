@@ -1,0 +1,32 @@
+{
+    "settings": {
+        "title": "Ustawienia użykownika [<b>{{username}}</b>]",
+        "form": {
+            "firstname": "Imię",
+            "firstname.placeholder": "Imię",
+            "lastname": "Nazwisko",
+            "lastname.placeholder": "Nazwisko",
+            "language": "Język",
+            "button": "Zapisz"
+        },
+        "messages": {
+            "error": {
+                "fail": "<strong>Wystąpił błąd!</strong> Ustawienia nie zostały zapisane",
+                "emailexists": "<strong>Podany adres e-mail jest już w użyciu.</strong> Wybierz inny."
+            },
+            "success": "<strong>Zapisano!</strong>",
+            "validate": {
+                "firstname": {
+                    "required": "Twoje imię jest wymagane",
+                    "minlength": "Twoje imię musi mieć co najmniej 1 znak",
+                    "maxlength": "Twoje imię nie może mieć więcej niż 50 znaków"
+                },
+                "lastname": {
+                    "required": "Twoje nazwisko jest wymagane",
+                    "minlength": "Twoje nazwisko musi mieć co najmniej 1 znak",
+                    "maxlength": "Twoje nazwisko nie może mieć więcej niż 50 znaków"
+                }
+            }
+        }
+    }
+}

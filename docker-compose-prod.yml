@@ -1,0 +1,19 @@
+jhipster-prod-elasticsearch:
+  container_name: Cabzza-prod-elasticsearch
+  image: elasticsearch
+  # volumes:
+  # - ~/volumes/jhipster/Cabzza/prod-elasticsearch/:/usr/share/elasticsearch/data/
+  ports:
+  - "9200:9200"
+  - "9300:9300"
+jhipster-prod-postgresql:
+  container_name: Cabzza-prod-postgresql
+  image: postgres
+  # volumes:
+  # - ~/volumes/jhipster/Cabzza/prod-postgresql/:/var/lib/postgresql/
+  environment:
+  - POSTGRES_USER=Cabzza
+  - POSTGRES_PASSWORD=
+  ports:
+  - "5432:5432"
+

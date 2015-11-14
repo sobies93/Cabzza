@@ -1,0 +1,28 @@
+{
+    "health": {
+        "title": "Spawdzenie stanu",
+        "refresh.button": "Odśwież",
+        "stacktrace": "Stacktrace",
+        "details": {
+            "details": "Szczegóły",
+            "properties": "Właściwości",
+            "name": "Nazwa",
+            "value": "Wartość",
+            "error": "Błąd"
+        },
+        "indicator": {
+            "diskSpace": "Miejsce na dysku",
+            "mail": "Email",
+            "elasticsearch": "Elasticsearch",
+            "db": "Baza danych"
+        },
+        "table": {
+            "service": "Nazwa serwisu",
+            "status": "Status"
+        },
+        "status": {
+            "UP": "Działa",
+            "DOWN": "Nie działa"
+        }
+    }
+}

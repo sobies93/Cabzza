@@ -1,0 +1,282 @@
+html {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+}
+
+
+body {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    padding-top: 0px;
+    color: black;
+}
+
+/* fonts */
+
+@font-face {
+    font-family: Lato-light;
+    src: url('../fonts/Lato-Light.ttf');   
+}
+
+@font-face {
+    font-family: Lato-Bold;
+    src: url('../fonts/Lato-Bold.ttf');   
+}
+
+@font-face {
+    font-family: Lato-Thin;
+    src: url('../fonts/Lato-Thin.ttf');   
+}
+
+@font-face {
+    font-family: Lato-Regular;
+    src: url('../fonts/Lato-Regular.ttf');   
+}
+
+/* general styles */
+
+.background {
+    position: relative;
+    height: auto;
+    min-height: 100%;
+    width: 100%;
+    background-image: url('../IMG/background.png');
+    background-size: cover;
+}
+
+.nopadding {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+/*-----------------------------steps.html------------------------------*/
+
+.intro-section {
+}
+
+.intro-section .container-fluid {
+    padding-bottom: 5vw;
+    margin: 0;
+    text-align: center;
+}
+
+.intro-section h1 {
+    font-size: 5vw;
+    font-family:'Lato-Regular';
+    color: rgba(119,34,17,0.8);
+    margin-top: 15%;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.intro-section h4 {
+    font-size: 2vw;
+    font-family:'Lato-Regular';
+    color: rgba(119,34,17,0.8);
+    padding: 0;
+}
+
+/*-------Content section-------*/
+
+
+/* content styles part 1 */
+
+.step-box {
+    background: rgba(255,255,255,0.5);
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 16.6667%;
+}
+
+.step-box .box-title {
+    height: 50px;
+}
+
+.step-box .text-diff-height {
+    padding-top: 2%;
+    padding-left: 2%;
+}
+
+.step-box .text-diff-height h6,
+.step-box .text-diff-height h3 {
+    font-size: 2vw;
+    font-family:'Lato-Regular';
+    text-align: left;
+    color: #752111;
+    display: inline;
+    line-height: 100%;
+}
+
+.step-box .text-diff-height h3 {
+    font-size: 4vw;
+    font-family:'Lato-Bold';
+    line-height: 55%;
+    color: #752111;
+}
+
+.step-box h6 {
+    font-size: 2vw;
+    font-family:'Lato-Regular';
+    text-align: left;
+    color: #752111;
+    margin: 0;
+    padding-top: 6%;
+}
+
+.step-box .inside-box {
+    margin: 5%;
+    padding-top: 5%;
+    padding-bottom: 2%;
+}
+
+.step-box .btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  width: 100%;
+  border-radius: 28px;
+  font-family:'Lato-Regular';
+  color: #ffffff;
+  font-size: 2vw;
+  background: rgba(0,0,0,0.3);
+  padding: 5px 20px 5px 20px;
+  border: solid #ffffff 2px;
+  text-decoration: none;
+}
+
+.step-box .btn:hover {
+  background: rgba(119,34,17,0.8);
+  text-decoration: none;
+  color: white;
+}
+
+.step-box .input-group {
+    padding: 0;
+}
+
+.step-box .input-style {
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    font-family: 'Lato-Regular';
+    color: white;
+    background: rgba(0,0,0,0.05);
+    padding: 15px;
+    margin: 0 0 5px 0;
+    border: solid 1px white;
+    transition: box-shadow 0.2s;
+    -webkit-transition: box-shadow 0.2s;
+    outline: none;
+}
+
+.step-box .input-style:focus {
+    box-shadow: 0 0 3px 0px white;
+    color: rgba(119,34,17,0.8);
+}
+
+.step-box .checkbox {
+    margin: 0;
+}
+
+.step-box .checkbox p {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.step-box i.stateIcon {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.step-box .fa-angle-double-up {
+    color: green;
+}
+
+.step-box .fa-angle-double-down {
+    color: red;
+}
+
+.step-box .fa-arrows-h {
+    color: blue;
+}
+
+.step-box .checkbox input[type="checkbox"] {
+    margin-left: 0;
+    box-sizing: content-box;
+}
+
+.step-box .checkbox label {
+    font-size: 18px;
+    font-family: 'Lato-Regular';
+    color: white;
+    height: 40px;
+    padding-left: 15%;
+    transition: padding-left 0.5s, color 1s;
+    -webkit-transition: padding-left 0.5s, color 1s;
+}
+
+.step-box .checkbox input[type="checkbox"]:checked + label {
+    font-family: 'Lato-Regular';
+    color: rgba(119,34,17,0.8);
+    padding-left: 25%;
+}
+
+.step-box h5 {
+    font-size: 18px;
+    font-family: 'Lato-Regular';
+    color: rgba(119,34,17,0.8);
+}
+
+.step-box .row .addPadding {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.step-box .sliderPositioning {
+    padding-top: 1.5%;
+}
+
+.step-box i.dateIcon {
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    text-align: left;
+    font-size: 25px;
+    color: rgba(119,34,17,0.8);
+}
+
+.input-append.date .add-on i {
+    display: inline-block;
+    width: 30px;
+    height: 40px;
+}
+
+.step-box .date-field {
+    display: inline-block;
+}
+
+.step-box .input-style.date-field {
+    height: 40px;
+    width: 40%;
+    padding: 5px;
+    text-align: center;
+}
+
+.step-box .checkbox input[type="checkbox"] {
+    margin-left: 0;
+    box-sizing: content-box;
+}
+
+.step-box .container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: black;
+}

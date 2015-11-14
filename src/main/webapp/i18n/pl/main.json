@@ -1,0 +1,9 @@
+{
+    "main": {
+        "title": "Cabzza",
+        "subtitle": "Strona główna",
+        "logged": {
+            "message": "Zalogowany jako \"{{username}}\"."
+        }
+    }
+}

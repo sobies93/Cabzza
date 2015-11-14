@@ -1,0 +1,24 @@
+{
+    "cabzzaApp": {
+        "stockWallet" : {
+            "home": {
+                "title": "Porfele inwestycyjne",
+                "createLabel": "Stwórz nowy portfel inwestycyjny",
+                "createOrEditLabel": "Stwórz lub edtuj portfel inwestycyjny"
+            },
+            "created": "Utworzono nowy portfel z id {{ param }}",
+            "updated": "Porfel o id {{ param }} został zaktualizowany",
+            "deleted": "Porfel o id {{ param }} został usunięty",
+            "delete": {
+                "question": "na pewno chcesz usunąć porfel o id {{ id }}?"
+            },
+            "detail": {
+                "title": "Porfel inwestycyjny"
+            },
+            "quoteSymbol": "Symbol akcji",
+            "startDate": "Data początkowa",
+            "endDate": "Data końcowa",
+            "owner": "Właściciel"
+        }
+    }
+}

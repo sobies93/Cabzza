@@ -1,0 +1,20 @@
+{
+    "login": {
+        "title": "Sign in",
+        "form": {
+            "password": "Hasło",
+            "password.placeholder": "Hasło",
+            "rememberme": "Pamiętaj mnie",
+            "button": "Zaloguj",
+			"cancel": "Anuluj"
+        },
+        "messages": {
+            "error": {
+                "authentication": "<strong>Wystąpił bład</strong> Sprawdź swój login i hasło"
+            }
+        },
+        "password" : {
+            "forgot": "Zapomnialeś hasła?"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "reset": {
+        "request": {
+            "title": "Resetuj hasło",
+            "form": {
+                "button": "Resetuj hasło"
+            },
+            "messages": {
+                "info": "Wprowadź adrs email, którego użyłeś do rejestracji",
+                "success": "Sprawdź swoją skrzynkę pocztową, aby uzyskać wskazówki do zresetowania hasła.",
+                "notfound": "<strong>Ten adres e-mail nie jest zarejestrowany!</strong>"
+
+            }
+
+        },
+        "finish" : {
+            "title": "Resetuj hasło",
+            "form": {
+                "button": "Potwierdź nowe hasło"
+            },
+            "messages": {
+                "info": "Wpisz nowe hasło",
+                "success": "<strong>Hasło zostało zmienione.</strong> Możesz się <a class=\"alert-link\" href=\"#/login\">zalogować</a>.",
+                "keymissing": "Brak klucza potrzebnego do zresetowania hasła.",
+                "error": "Twoje hasło nie mogło zostać zresetowane. Pamiętaj, że zresetowanie hasła jest ważne przez 24 godziny"
+            }
+        }
+    }
+
+}

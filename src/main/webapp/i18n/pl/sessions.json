@@ -1,0 +1,15 @@
+{
+    "sessions": {
+        "title": "Active sessions for [<b>{{username}}</b>]",
+        "table": {
+            "ipaddress": "Adres IP",
+            "useragent": "User Agent",
+            "date": "Data",
+            "button": "Inwaliduj"
+        },
+        "messages": {
+            "success": "<strong>Sesja zinwalidowana</strong>",
+            "error": "<strong>Wystapił błąd</strong> Nie można zinwalidować sesji."
+        }
+    }
+}

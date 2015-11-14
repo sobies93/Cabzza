@@ -1,0 +1,24 @@
+{
+    "register": {
+        "title": "Rejestracja",
+        "form": {
+            "button": "Zarejestruj"
+        },
+        "messages": {
+            "validate": {
+                "login": {
+                    "required": "Nazwa użytkownika jest wymagana",
+                    "minlength": "Nazwa użytkownika musi skłądać się z co najmniej 1 znaku.",
+                    "maxlength": "Nazwa użytkownika nie może mieć więcej niż 50 znaków.",
+                    "pattern": "Twoje hasło może zawierać jedynie litery i cyfry."
+                }
+            },
+            "success": "<strong>Konto zarejestrowane!</strong> Sprawdź swoją skrzynkę pocztową, aby aktywować konto",
+            "error": {
+                "fail": "<strong>Wystąpił błąd podczas rejestracji.</strong> PSpróbuj ponownie później.",
+                "userexists": "<strong>Ta nazwa użytkownika jest już zajęta</strong> Wybierz inną.",
+                "emailexists": "<strong>Ten adres e-mail jest już używany</strong> Wpisz inny."
+            }
+        }
+    }
+}

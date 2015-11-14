@@ -1,0 +1,113 @@
+{
+    "global": {
+        "title": "Cabzza",
+        "browsehappy": "Używasz <strong>nieaktualnej</strong> przeglądarki. Prosimy <a href=\"http://browsehappy.com/?locale=en\">zaktualizować przeglądarkę</a>, aby poprawić wrażenia podczas przeglądania strony.",
+        "menu": {
+            "home": "Strona główna",
+            "entities": {
+                "main": "Encje",
+                "stockWallet": "Portfele",
+                "additionalEntity": "JHipster will add additional entities here (do not translate!)"
+            },
+            "account": {
+                "main": "Konto",
+                "settings": "Ustawienia",
+                "password": "Hasło",
+                "sessions": "Sesje",
+                "login": "Zaloguj",
+                "logout": "Wyloguj",
+                "register": "Zarejestruj"
+            },
+            "admin": {
+                "main": "Administracja",
+                "user-management": "Zarządzanie użytkownikami",
+                "tracker": "Śledzenie użytkowników",
+                "metrics": "Metryki",
+                "health": "Status",
+                "configuration": "Konfiguracja",
+                "logs": "Logi",
+                "audits": "Audyty",
+                "apidocs": "API",
+                "database": "Baza danych"
+            },
+            "language": "Język"
+        },
+        "form": {
+            "username": "Login",
+            "username.placeholder": "Login",
+            "newpassword": "Hasło",
+            "newpassword.placeholder": "Hasło",
+            "confirmpassword": "Potwierdź hasło",
+            "confirmpassword.placeholder": "Potwierdź hasło",
+            "email": "E-mail",
+            "email.placeholder": "E-mail"
+        },
+        "messages": {
+            "info": {
+                "authenticated": "If you want to <a class=\"alert-link\" href=\"#/login\">sign in</a>, you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\").",
+                "register": "You don't have an account yet? <a class=\"alert-link\" href=\"#/register\">Register a new account</a>"
+            },
+            "error": {
+                "dontmatch": "Hasła się nie zgadzają!"
+            },
+            "validate": {
+                "newpassword": {
+                    "required": "Hasło ejst wymagane.",
+                    "minlength": "Hasło musi mieć co najmniej 5 znaków.",
+                    "maxlength": "Hasło nie może być dłuższe niż 50 znaków.",
+                    "strength": "Siła hasła:"
+                },
+                "confirmpassword": {
+                    "required": "Potwierdź wpisane hasło",
+                    "minlength": "Hasło musi mieć co najmniej 5 znaków.",
+                    "maxlength": "Hasło nie może być dłuższe niż 50 znaków."
+                },
+                "email": {
+                    "required": "Adres e-mail jest wymagany.",
+                    "invalid": "Adres e-mail jest nieprawidłowy.",
+                    "minlength": "Adres e-mail musi mieć co najmniej 5 znaków.",
+                    "maxlength": "Adres e-mail nie może być dłuższy niż 50 znaków."
+                }
+            }
+        },
+        "field": {
+            "id": "ID"
+        }
+    },
+    "entity": {
+        "action": {
+            "addblob": "Dodaj plik",
+            "addimage": "Dodaj obrazek",
+            "back": "Wstecz",
+            "cancel": "Anuluj",
+            "delete": "Usuń",
+            "edit": "Edytuj",
+            "save": "Zapisz",
+            "view": "Podgląd"
+        },
+        "detail": {
+            "field": "Pole",
+            "value": "Wartość"
+        },
+        "delete": {
+            "title": "Potwierdź usunięcie"
+        },
+        "validation": {
+            "required": "To pole jest wymagane.",
+            "minlength": "To pole musi posiadać co najmniej {{min}} znaków.",
+            "maxlength": "To pole nie może mieć więcej niż {{max}} znaków.",
+            "min": "To pole musi wynosić więcej niż {{min}}.",
+            "max": "To pole nie może wynosić więcej niż {{max}}.",
+            "minbytes": "To pole musi mieć co najmniej {{min}} bajtów.",
+            "maxbytes": "To pole nie może mieć więcej niż {{max}} bajtów.",
+            "pattern": "To pole musi zgadzać się z następującym wzorcem: {{pattern}}.",
+            "number": "To pole musi być liczbą.",
+            "datetimelocal": "To pole musi być datą."
+        }
+    },
+    "error": {
+        "serverNotReachable": "Serwer nieosiągalny",
+        "NotNull": "Pole {{fieldName}} nie może być puste!"
+    },
+    "footer": "Stopka"
+}
