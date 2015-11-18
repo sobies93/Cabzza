@@ -19,8 +19,8 @@
 <!-- Content Section -->
 <section class="content-section">
 	<div class="container-fluid">
-		<div class"row">
-			 <div class="col-sm-offset-1 col-sm-10 col xs-12 step-box">
+		<div class="row">
+			<div class="col-sm-offset-1 col-sm-10 col xs-12 step-box">
 				<div class="row box-title">
 					<div class="col-sm-2 text-diff-height">
 						<h6>KROK </h6><h3>4</h3>
@@ -35,7 +35,7 @@
 							<h5>Zdefiniuj bezpieczeństwo:</h5>
 						</div>
 						<div class="col-sm-5 sliderPositioning">
-							<input id="bezpieczenstwo" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="1"/>
+							<slider ng-model="sliders.sliderValue" min="testOptions.min" step="testOptions.step" max="testOptions.max" value="testOptions.value" tooltip="hide"></slider>
 						</div>
 					</div>
 
@@ -44,7 +44,7 @@
 							<h5>Zdefiniuj profit:</h5>
 						</div>
 						<div class="col-sm-5 sliderPositioning">
-							<input id="preofit" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="1"/>
+							<slider ng-model="sliders.sliderValue1" min="testOptions.min" step="testOptions.step" max="testOptions.max" value="testOptions.value1" tooltip="hide"></slider>
 						</div>
 					</div>
 
@@ -53,7 +53,7 @@
 							<h5>Optymalny portfel:</h5>
 						</div>
 						<div class="col-sm-5">
-
+							<slider ng-model="sliders.sliderValue2" min="testOptions.min" step="testOptions.step" max="testOptions.max" value="testOptions.value2" tooltip="hide"></slider>
 						</div>
 					</div>
 
@@ -67,4 +67,4 @@
 		</div>
 	</div>
 </section>
-		<script src="assets/js/bootstrap-slider.js"></script>
+<script src="assets/js/bootstrap-slider.js"></script>
