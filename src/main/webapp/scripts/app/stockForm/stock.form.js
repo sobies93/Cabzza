@@ -4,22 +4,22 @@ angular.module('cabzzaApp')
 		.config(function ($stateProvider) {
 			$stateProvider
 					.state('stockForm', {
-						abstract: true,
 						parent: 'site',
 						url: '/stockWalletForm',
 						data: {
 							authorities: ['ROLE_USER']
+						},
+						views: {
+							'content@': {
+								templateUrl: 'scripts/app/stockForm/form.html',
+								controller: 'StockFormController'
+							}
 						}
 					})
-					.state('step1', {
+					.state('stockForm.step1', {
 						parent: 'stockForm',
 						url: '/1',
-						views: {
-							'content@': {
-								templateUrl: 'scripts/app/stockForm/step1.html',
-								controller: 'StockFormController'
-							}
-						},
+						templateUrl: 'scripts/app/stockForm/step1.html',
 						resolve: {
 							mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
 									$translatePartialLoader.addPart('main');
@@ -27,81 +27,60 @@ angular.module('cabzzaApp')
 								}]
 						}
 					})
-					.state('step2', {
+					.state('stockForm.step2', {
 						parent: 'stockForm',
 						url: '/2',
-						views: {
-							'content@': {
-								templateUrl: 'scripts/app/stockForm/step2.html',
-								controller: 'StockFormController'
-							}
-						},
+						templateUrl: 'scripts/app/stockForm/step2.html',
 						resolve: {
 							mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
 									$translatePartialLoader.addPart('main');
 									return $translate.refresh();
 								}]
 						}
-					}).state('step3', {
-				parent: 'stockForm',
-				url: '/3',
-				views: {
-					'content@': {
+					})
+					.state('stockForm.step3', {
+						parent: 'stockForm',
+						url: '/3',
 						templateUrl: 'scripts/app/stockForm/step3.html',
-						controller: 'StockFormController'
-					}
-				},
-				resolve: {
-					mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-							$translatePartialLoader.addPart('main');
-							return $translate.refresh();
-						}]
-				}
-			}).state('step4', {
-				parent: 'stockForm',
-				url: '/4',
-				views: {
-					'content@': {
+						resolve: {
+							mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+									$translatePartialLoader.addPart('main');
+									return $translate.refresh();
+								}]
+						}
+					})
+					.state('stockForm.step4', {
+						parent: 'stockForm',
+						url: '/4',
 						templateUrl: 'scripts/app/stockForm/step4.html',
-						controller: 'StockFormController'
-					}
-				},
-				resolve: {
-					mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-							$translatePartialLoader.addPart('main');
-							return $translate.refresh();
-						}]
-				}
-			}).state('step5', {
-				parent: 'stockForm',
-				url: '/5',
-				views: {
-					'content@': {
+						resolve: {
+							mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+									$translatePartialLoader.addPart('main');
+									return $translate.refresh();
+								}]
+						}
+					})
+					.state('stockForm.step5', {
+						parent: 'stockForm',
+						url: '/5',
 						templateUrl: 'scripts/app/stockForm/step5.html',
-						controller: 'StockFormController'
-					}
-				},
-				resolve: {
-					mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-							$translatePartialLoader.addPart('main');
-							return $translate.refresh();
-						}]
-				}
-			}).state('step6', {
-				parent: 'stockForm',
-				url: '/6',
-				views: {
-					'content@': {
+						resolve: {
+							mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+									$translatePartialLoader.addPart('main');
+									return $translate.refresh();
+								}]
+						}
+					})
+					.state('stockForm.step6', {
+						parent: 'stockForm',
+						url: '/6',
 						templateUrl: 'scripts/app/stockForm/step6.html',
-						controller: 'StockFormController'
-					}
-				},
-				resolve: {
-					mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-							$translatePartialLoader.addPart('main');
-							return $translate.refresh();
-						}]
-				}
-			});
+						resolve: {
+							mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+									$translatePartialLoader.addPart('main');
+									return $translate.refresh();
+								}]
+						}
+					});
 		});
 

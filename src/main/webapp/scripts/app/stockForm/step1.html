@@ -1,22 +1,3 @@
-
-<!-- Intro Section -->
-<section class="intro-section">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xs-12">
-				<h1 class="">SPRAWDŹ SWOJĄ GIEŁDĘ
-				</h1>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-12">
-				<h4 class="">OBLICZ SWÓJ PORTFEL
-				</h4>
-			</div>
-		</div>
-	</div>
-</section>
-
 <!-- Content Section -->
 <section class="content-section">
 	<div class="container-fluid">
@@ -35,15 +16,15 @@
 				</div>
 				<div class="row inside-box">
 					<div class="col-sm-offset-1 col-sm-4 col-xs-6 nopadding">
-						<a type="radio" class="btn" data-bind="checked: priority">INWESTORSKI</a>
+						<a type="radio" class="btn" value="MODE_INVEST" ng-model="formData.type">INWESTORSKI</a>
 					</div>
 					<div class="col-sm-offset-2 col-sm-4 col-xs-6 nopadding">
-						<a type="radio" class="btn" data-bind="checked: priority">EDUKACYJNY</a>
+						<a type="radio" class="btn" value="MODE_EDUCATIONAL" ng-model="formData.type">EDUKACYJNY</a>
 					</div>
 				</div> 
 				<div class="row box-title">
 					<div class="col-sm-offset-9 col-sm-3">
-						<button type="button" class="btn" ng-click="next()" >Dalej</button>
+						<button type="button" class="btn" ui-sref="stockForm.step2" >Dalej</button>
 					</div>
 				</div>  
 			</div>

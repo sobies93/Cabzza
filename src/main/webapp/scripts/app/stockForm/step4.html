@@ -1,21 +1,3 @@
-<!-- Intro Section -->
-<section class="intro-section">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xs-12">
-				<h1 class="">SPRAWDŹ SWOJĄ GIEŁDĘ
-				</h1>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-12">
-				<h4 class="">OBLICZ SWÓJ PORTFEL
-				</h4>
-			</div>
-		</div>
-	</div>
-</section>
-
 <!-- Content Section -->
 <section class="content-section">
 	<div class="container-fluid">
@@ -35,7 +17,7 @@
 							<h5>Zdefiniuj bezpieczeństwo:</h5>
 						</div>
 						<div class="col-sm-5 sliderPositioning">
-							<slider ng-model="sliders.sliderValue" min="testOptions.min" step="testOptions.step" max="testOptions.max" value="security"></slider>
+							<slider ng-model="formData.sliders.sliderValue" min="testOptions.min" step="testOptions.step" max="testOptions.max" value="security"></slider>
 						</div>
 					</div>
 
@@ -44,7 +26,7 @@
 							<h5>Zdefiniuj profit:</h5>
 						</div>
 						<div class="col-sm-5 sliderPositioning">
-							<slider ng-model="sliders.sliderValue1" min="testOptions.min" step="testOptions.step" max="testOptions.max" value="profit"></slider>
+							<slider ng-model="formData.sliders.sliderValue1" min="testOptions.min" step="testOptions.step" max="testOptions.max" value="profit"></slider>
 						</div>
 					</div>
 
@@ -53,14 +35,14 @@
 							<h5>Optymalny portfel:</h5>
 						</div>
 						<div class="col-sm-5">
-							<slider ng-model="sliders.sliderValue2" min="testOptions.min" step="testOptions.step" max="testOptions.max" value="optimalWallet" tooltip="hide"></slider>
+							<slider ng-model="formData.sliders.sliderValue2" min="testOptions.min" step="testOptions.step" max="testOptions.max" value="optimalWallet" tooltip="hide"></slider>
 						</div>
 					</div>
 
 				</div>
 				<div class="row box-title">
 					<div class="col-sm-offset-9 col-sm-3">
-						<button type="button" class="btn" ng-click="next()" >Dalej</button>
+						<button type="button" class="btn" ui-sref="stockForm.step5" >Dalej</button>
 					</div>
 				</div>  
 			</div>
