@@ -15,11 +15,7 @@ angular.module('cabzzaApp')
                 rememberMe: $scope.rememberMe
             }).then(function () {
                 $scope.authenticationError = false;
-                if ($rootScope.previousStateName === 'register') {
-                    $state.go('home');
-                } else {
-                    $rootScope.back();
-                }
+                $state.go('projectList');
             }).catch(function () {
                 $scope.authenticationError = true;
             });
