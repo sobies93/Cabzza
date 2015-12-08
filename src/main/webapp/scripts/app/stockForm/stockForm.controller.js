@@ -1,7 +1,11 @@
 'use strict';
 
 angular.module('cabzzaApp')
-		.controller('StockFormController', function ($scope, $state, $rootScope) {
+		.controller('StockFormController', function ($scope, $state, $rootScope, Calculate) {
+
+
+            Calculate.start();
+
 			$scope.next = function () {
 				if ($state.current.name === 'step1') {
 					$state.go('step2');
@@ -13,11 +17,8 @@ angular.module('cabzzaApp')
 				} else if ($state.current.name === 'step4') {
 					$state.go('step5');
 				} else if ($state.current.name === 'step5') {
-					$state.go('step6');
-				} else if ($state.current.name === 'step6') {
-					$state.go('home');
+					$state.go('projectView');
 				}
 			};
-
 
 		});

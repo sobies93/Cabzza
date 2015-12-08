@@ -382,7 +382,20 @@
 			<version>${cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+        <!-- JOptimizer -->
+        <dependency>
+            <groupId>com.joptimizer</groupId>
+            <artifactId>joptimizer</artifactId>
+            <version>3.4.0</version>
+        </dependency>
+        <!-- alternativ optimaization -->
+        <dependency>
+            <groupId>org.ojalgo</groupId>
+            <artifactId>ojalgo</artifactId>
+            <version>36.0</version>
+        </dependency>
+
+    </dependencies>
 	<build>
 		<defaultGoal>spring-boot:run</defaultGoal>
 		<resources>
