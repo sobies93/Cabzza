@@ -5,14 +5,14 @@
             "relationshipName": "user",
             "otherEntityName": "user",
             "relationshipType": "many-to-one",
-            "otherEntityField": "id"
+            "otherEntityField": "login"
         },
         {
             "relationshipId": 2,
             "relationshipName": "portfolioStore",
             "otherEntityName": "portfolioStore",
             "relationshipType": "one-to-many",
-            "otherEntityField": "id"
+            "otherEntityRelationshipName": "newStockWallet"
         }
     ],
     "fields": [
@@ -43,10 +43,7 @@
         {
             "fieldId": 4,
             "fieldName": "prognoseDate",
-            "fieldType": "LocalDate",
-            "fieldValidateRules": [
-                "required"
-            ]
+            "fieldType": "LocalDate"
         },
         {
             "fieldId": 5,
@@ -70,7 +67,8 @@
         }
 
     ],
-    "changelogDate": "20151107161521",
-    "dto": "mapstruct",
-    "pagination": "pager"
+    "changelogDate": "20151209201934",
+    "dto": "no",
+    "service": "no",
+    "pagination": "no"
 }

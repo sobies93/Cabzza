@@ -2,8 +2,8 @@
     "relationships": [
         {
             "relationshipId": 1,
-            "relationshipName": "stockWallet",
-            "otherEntityName": "stockWallet",
+            "relationshipName": "newStockWallet",
+            "otherEntityName": "newStockWallet",
             "relationshipType": "many-to-one",
             "otherEntityField": "name"
         },
@@ -12,7 +12,7 @@
             "relationshipName": "stockInfo",
             "otherEntityName": "stockInfo",
             "relationshipType": "many-to-one",
-            "otherEntityField": "1"
+            "otherEntityField": "name"
         }
     ],
     "fields": [
