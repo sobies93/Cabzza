@@ -7,5 +7,11 @@
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20151107161521_added_entity_StockWallet.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20151107162922_added_entity_StockWallet1.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151209201934_added_entity_NewStockWallet.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151209210649_added_entity_StockInfo.xml" relativeToChangelogFile="false"/>
+
+    <include file="classpath:config/liquibase/changelog/20151209205511_added_entity_StockQuotes.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151209201934_added_entity_PortfolioStore.xml" relativeToChangelogFile="false"/>
+
     <!-- JHipster will add liquibase changelogs here -->
 </databaseChangeLog>

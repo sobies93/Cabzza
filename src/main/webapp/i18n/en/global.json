@@ -1,3 +1,4 @@
+
 {
     "global": {
         "title": "Cabzza",
@@ -8,6 +9,10 @@
                 "main": "Entities",
                 "stockWallet": "StockWallet",
                 "stockWallet1": "StockWallet1",
+                "stockQuotes": "StockQuotes",
+                "stockInfo": "StockInfo",
+                "portfolioStore": "PortfolioStore",
+                "newStockWallet": "NewStockWallet",
                 "additionalEntity": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
