@@ -1,0 +1,53 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "stockQuotes",
+            "otherEntityName": "stockQuotes",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "stockInfo"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "portfolioStore",
+            "otherEntityName": "portfolioStore",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "stockInfo"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "symbol",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "quotesStartDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "quotesEndDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "isInvestorModeAvaiable",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20151209210649",
+    "dto": "no",
+    "service": "no",
+    "pagination": "no"
+}
