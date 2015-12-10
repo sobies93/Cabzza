@@ -1,0 +1,98 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myNewStockWalletLabel" translate="cabzzaApp.newStockWallet.home.createOrEditLabel">Create or edit a NewStockWallet</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="newStockWallet.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.newStockWallet.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="newStockWallet.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.newStockWallet.historicalDataDate" for="field_historicalDataDate">HistoricalDataDate</label>
+            <input type="date" class="form-control" name="historicalDataDate" id="field_historicalDataDate"
+                    ng-model="newStockWallet.historicalDataDate"
+                    required />
+            <div ng-show="editForm.historicalDataDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.historicalDataDate.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.newStockWallet.calculatingsDate" for="field_calculatingsDate">CalculatingsDate</label>
+            <input type="date" class="form-control" name="calculatingsDate" id="field_calculatingsDate"
+                    ng-model="newStockWallet.calculatingsDate"
+                    required />
+            <div ng-show="editForm.calculatingsDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.calculatingsDate.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.newStockWallet.prognoseDate" for="field_prognoseDate">PrognoseDate</label>
+            <input type="date" class="form-control" name="prognoseDate" id="field_prognoseDate"
+                    ng-model="newStockWallet.prognoseDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.newStockWallet.riskfreeRate" for="field_riskfreeRate">RiskfreeRate</label>
+            <input type="number" class="form-control" name="riskfreeRate" id="field_riskfreeRate"
+                    ng-model="newStockWallet.riskfreeRate"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.newStockWallet.expectedReturn" for="field_expectedReturn">ExpectedReturn</label>
+            <input type="number" class="form-control" name="expectedReturn" id="field_expectedReturn"
+                    ng-model="newStockWallet.expectedReturn"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.newStockWallet.expectedVariation" for="field_expectedVariation">ExpectedVariation</label>
+            <input type="number" class="form-control" name="expectedVariation" id="field_expectedVariation"
+                    ng-model="newStockWallet.expectedVariation"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.newStockWallet.sharpRatio" for="field_sharpRatio">SharpRatio</label>
+            <input type="number" class="form-control" name="sharpRatio" id="field_sharpRatio"
+                    ng-model="newStockWallet.sharpRatio"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="cabzzaApp.newStockWallet.user" for="field_user">user</label>
+            <select class="form-control" id="field_user" name="user" ng-model="newStockWallet.user" ng-options="user as user.login for user in users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

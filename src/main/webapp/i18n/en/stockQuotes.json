@@ -1,0 +1,25 @@
+{
+    "cabzzaApp": {
+        "stockQuotes" : {
+            "home": {
+                "title": "StockQuotess",
+                "createLabel": "Create a new StockQuotes",
+                "createOrEditLabel": "Create or edit a StockQuotes"
+            },
+            "created": "A new StockQuotes is created with identifier {{ param }}",
+            "updated": "A StockQuotes is updated with identifier {{ param }}",
+            "deleted": "A StockQuotes is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete StockQuotes {{ id }}?"
+            },
+            "detail": {
+                "title": "StockQuotes"
+            },
+            "date": "Date",
+            "value": "Value",
+            "splitRate": "SplitRate",
+            "dividend": "Dividend",
+            "stockInfo": "StockInfo"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "cabzzaApp": {
+        "stockInfo" : {
+            "home": {
+                "title": "StockInfos",
+                "createLabel": "Create a new StockInfo",
+                "createOrEditLabel": "Create or edit a StockInfo"
+            },
+            "created": "A new StockInfo is created with identifier {{ param }}",
+            "updated": "A StockInfo is updated with identifier {{ param }}",
+            "deleted": "A StockInfo is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete StockInfo {{ id }}?"
+            },
+            "detail": {
+                "title": "StockInfo"
+            },
+            "name": "Name",
+            "symbol": "Symbol",
+            "quotesStartDate": "QuotesStartDate",
+            "quotesEndDate": "QuotesEndDate",
+            "isInvestorModeAvaiable": "IsInvestorModeAvaiable",
+            "stockQuotes": "StockQuotes",
+            "portfolioStore": "PortfolioStore"
+        }
+    }
+}

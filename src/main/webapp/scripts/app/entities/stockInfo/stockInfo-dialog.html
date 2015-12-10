@@ -1,0 +1,56 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myStockInfoLabel" translate="cabzzaApp.stockInfo.home.createOrEditLabel">Create or edit a StockInfo</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="stockInfo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.stockInfo.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="stockInfo.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.stockInfo.symbol" for="field_symbol">Symbol</label>
+            <input type="text" class="form-control" name="symbol" id="field_symbol"
+                    ng-model="stockInfo.symbol"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.stockInfo.quotesStartDate" for="field_quotesStartDate">QuotesStartDate</label>
+            <input type="date" class="form-control" name="quotesStartDate" id="field_quotesStartDate"
+                    ng-model="stockInfo.quotesStartDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.stockInfo.quotesEndDate" for="field_quotesEndDate">QuotesEndDate</label>
+            <input type="date" class="form-control" name="quotesEndDate" id="field_quotesEndDate"
+                    ng-model="stockInfo.quotesEndDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.stockInfo.isInvestorModeAvaiable" for="field_isInvestorModeAvaiable">IsInvestorModeAvaiable</label>
+            <input type="checkbox" class="form-control" name="isInvestorModeAvaiable" id="field_isInvestorModeAvaiable"
+                    ng-model="stockInfo.isInvestorModeAvaiable"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
