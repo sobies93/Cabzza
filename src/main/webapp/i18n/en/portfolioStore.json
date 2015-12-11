@@ -1,0 +1,23 @@
+{
+    "cabzzaApp": {
+        "portfolioStore" : {
+            "home": {
+                "title": "PortfolioStores",
+                "createLabel": "Create a new PortfolioStore",
+                "createOrEditLabel": "Create or edit a PortfolioStore"
+            },
+            "created": "A new PortfolioStore is created with identifier {{ param }}",
+            "updated": "A PortfolioStore is updated with identifier {{ param }}",
+            "deleted": "A PortfolioStore is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete PortfolioStore {{ id }}?"
+            },
+            "detail": {
+                "title": "PortfolioStore"
+            },
+            "percent": "Percent",
+            "newStockWallet": "NewStockWallet",
+            "stockInfo": "StockInfo"
+        }
+    }
+}

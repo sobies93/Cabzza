@@ -1,0 +1,39 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "stockInfo",
+            "otherEntityName": "stockInfo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "date",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "value",
+            "fieldType": "Double",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "splitRate",
+            "fieldType": "Double"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "dividend",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20151209205511",
+    "dto": "no",
+    "service": "no",
+    "pagination": "no"
+}

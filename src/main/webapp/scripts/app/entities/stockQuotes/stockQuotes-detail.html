@@ -1,0 +1,62 @@
+
+<div>
+    <h2><span translate="cabzzaApp.stockQuotes.detail.title">StockQuotes</span> {{stockQuotes.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="cabzzaApp.stockQuotes.date">Date</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{stockQuotes.date | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="cabzzaApp.stockQuotes.value">Value</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{stockQuotes.value}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="cabzzaApp.stockQuotes.splitRate">SplitRate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{stockQuotes.splitRate}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="cabzzaApp.stockQuotes.dividend">Dividend</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{stockQuotes.dividend}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="cabzzaApp.stockQuotes.stockInfo">stockInfo</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="stockInfo.detail({id:stockQuotes.stockInfo.id})">{{stockQuotes.stockInfo.id}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

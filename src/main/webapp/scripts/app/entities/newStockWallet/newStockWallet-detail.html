@@ -1,0 +1,94 @@
+
+<div>
+    <h2><span translate="cabzzaApp.newStockWallet.detail.title">NewStockWallet</span> {{newStockWallet.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="cabzzaApp.newStockWallet.name">Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{newStockWallet.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="cabzzaApp.newStockWallet.historicalDataDate">HistoricalDataDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{newStockWallet.historicalDataDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="cabzzaApp.newStockWallet.calculatingsDate">CalculatingsDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{newStockWallet.calculatingsDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="cabzzaApp.newStockWallet.prognoseDate">PrognoseDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{newStockWallet.prognoseDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="cabzzaApp.newStockWallet.riskfreeRate">RiskfreeRate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{newStockWallet.riskfreeRate}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="cabzzaApp.newStockWallet.expectedReturn">ExpectedReturn</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{newStockWallet.expectedReturn}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="cabzzaApp.newStockWallet.expectedVariation">ExpectedVariation</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{newStockWallet.expectedVariation}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="cabzzaApp.newStockWallet.sharpRatio">SharpRatio</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{newStockWallet.sharpRatio}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="cabzzaApp.newStockWallet.user">user</span>
+                </td>
+                <td>
+                    {{newStockWallet.user.login}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

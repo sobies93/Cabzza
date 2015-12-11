@@ -1,0 +1,23 @@
+{
+    "cabzzaApp": {
+        "stockQuotes" : {
+            "home": {
+                "title": "StockQuotess",
+                "createLabel": "Créer un nouveau StockQuotes",
+                "createOrEditLabel": "Créer ou éditer un StockQuotes"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le StockQuotes {{ id }} ?"
+            },
+            "detail": {
+                "title": "StockQuotes"
+            },
+            "date": "Date",
+            "value": "Value",
+            "splitRate": "SplitRate",
+            "dividend": "Dividend",
+            "stockInfo": "StockInfo"
+        }
+    }
+}
+
