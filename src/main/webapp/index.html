@@ -13,18 +13,18 @@
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css assets/styles/main.css -->
-        <link rel="stylesheet" href="assets/styles/main.css">
 		<link rel="stylesheet" href="assets/styles/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/styles/font-awesome.min.css">
 		<link rel="stylesheet" href="assets/styles/bootstrap-slider.css">
+		<link rel="stylesheet" href="assets/styles/main.css"><!--shouldn't it be after loading bootstrap css?-->
 
 		<link rel="stylesheet" href="assets/styles/bootstrap-datetimepicker.min.css">
-		<link rel="stylesheet" href="assets/styles/style.css">
+		<!--<link rel="stylesheet" href="assets/styles/style.css">-->
 
-		<link rel="stylesheet" href="assets/styles/steps-style.css">
+		<!--<link rel="stylesheet" href="assets/styles/steps-style.css">-->
 		<link rel="stylesheet" href="assets/styles/documentation.css">
 		<link rel="stylesheet" href="assets/styles/slider.css">
-
+		<link rel="stylesheet" href="assets/styles/main.scss"><!--temporary load main scss wout compilation-->
         <!-- endbuild -->
     </head>
     <body ng-app="cabzzaApp">
@@ -69,10 +69,6 @@
 
 		<!-- build:js scripts/vendor.js -->
 		<!-- bower:js -->
-		<!--<script src="assets/js/bootstrap.min.js"></script>-->
-
-
-
 		<script src="bower_components/modernizr/modernizr.js"></script>
 		<script src="bower_components/jquery/dist/jquery.js"></script>
 		<script src="bower_components/angular/angular.js"></script>
@@ -94,10 +90,7 @@
 		<script src="bower_components/json3/lib/json3.js"></script>
 		<script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
 		<script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
-        <script src="bower_components/amcharts/dist/amcharts/amcharts.js"></script>
-        <script src="bower_components/amcharts/dist/amcharts/pie.js"></script>
-        <script src="bower_components/amcharts/dist/amcharts/serial.js"></script>
-
+		<script src="bower_components/amcharts/dist/amcharts/amcharts.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
 
