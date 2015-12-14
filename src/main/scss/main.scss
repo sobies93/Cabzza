@@ -184,7 +184,7 @@ ul#strength {
   border-radius: 28px;
   font-family:'Lato-Regular';
   color: #ffffff;
-  font-size: 15px;
+  font-size: 20px;
   background: rgba(255,255,255,0);
   padding: 5px 20px 5px 20px;
   border: solid #ffffff 2px;
@@ -211,11 +211,14 @@ ul#strength {
     padding-bottom: 0;
     margin: 0;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 0;
     margin-top: 0;
     padding: 0;
     border: 0;
+}
+p {
+    font-size: 10px;
 }
 h1 {
     font-size: 90px;
@@ -227,16 +230,19 @@ h3 {
     font-size: 30px;
 }
 h4 {
-    font-size: 20px;
+    font-size: 22px;
 }
 h5 {
-    font-size: 15px;
+    font-size: 18px;
 }
 h6 {
-    font-size: 10px;
+    font-size: 15px;
 }
 
 @media(max-width:768px) {
+    p {
+        font-size: 10px;
+    }
     h1 {
         font-size: 90px;
     }
@@ -260,7 +266,7 @@ h6 {
 a {
     margin-bottom: 0;
     margin-top: 0;
-    font-size: 10px;
+    font-size: 15px;
     font-family:'Lato-Regular';
     text-decoration: none;
 }
@@ -288,7 +294,7 @@ i {
     padding-bottom: 3%;
 }
 a#register {
-    font-size: 10px;
+    font-size: 15px;
     display: block;
     color: white;
     text-align: right;
@@ -309,6 +315,14 @@ a#register:hover {
         display: block;
     }
 }
+
+#index-title {
+    padding-top: 10%;
+}
+
+#index-subtitle {
+    padding-bottom: 1%;
+}
 /* end of intro section */
 /* content section */ 
 .content-section {
@@ -323,7 +337,7 @@ a#register:hover {
     width: 100%;
 }
 .part-3 .ipad {
-    margin-left: 35%;
+    margin-left: 30%;
     margin-top: 0%;
     position: absolute;
     width: 30vw;
@@ -332,7 +346,7 @@ a#register:hover {
     display: block;
 }
 .part-3 .iphone {
-    margin-left: 5%;
+    margin-left: 10%;
     margin-top: 30%;
     position: absolute;
     width: 17vw;
@@ -356,23 +370,26 @@ a#register:hover {
 }
 .part-1 .text-diff-height,
 .part-3 .text-diff-height {
-    padding-top: 40%;
+    padding-top: 30%;
     padding-left: 8%
 }
-.part-1 .text-diff-height h5,
+.part-1 .text-diff-height h4,
 .part-1 .text-diff-height h3,
-.part-3 .text-diff-height h5,
+.part-3 .text-diff-height h4,
 .part-3 .text-diff-height h3 {
     text-align: left;
     color: rgba(119,34,17,1);
     display: inline;
     line-height: 100%;
 }
+.part-3 .text-diff-height h4,
+.part-3 .text-diff-height h3 {
+    color: white;
+}
 .part-1 .text-diff-height h3,
 .part-3 .text-diff-height h3 {
     font-family:'Lato-Bold';
     line-height: 55%;
-    color: #752111;
 }
 
     @media(max-width:768px) {
@@ -411,21 +428,24 @@ a#register:hover {
             display: none;
         }
 }
-.content-section .part-2 #column {
+.part-2 #column {
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 5%;
 }
 
-.content-section .part-2 i {
+.part-2 i {
+    font-size: 80px;
+    color: rgba(119,34,17,0.8);
 }
 
-.content-section .part-2 h6 {
+.part-2 h4 {
     text-align: justify;
 }
 
-.content-section .part-2 h5 {
+.part-2 h3 {
     text-align: center;
+    font-family: "Lato-Bold";
 }
 
  @media(max-width:750px) {
@@ -487,31 +507,18 @@ a#register:hover {
 /* footer styles */
 .footer {
     height: 100%;
-    padding-top: 5vw;
+    padding-top: 5%;
     background-color: white;
-}
-
-.footer h4, p {
-    font-size: 1.8vw;
     text-align: left;
-    color: #752111;
 }
 
-.footer h4 {
-    font-size: 3vw;
-    font-family:'Lato-Bold';
-    text-align: center;
-}
 
 @media(max-width:750px) {
     .footer h4, p {
         text-align: center;
-        font-size: 3vw;
     }
 
     .footer h4 {
-        font-size: 4vw;
-        font-family:'Lato-Bold';
         text-align: center;
     }
 }
