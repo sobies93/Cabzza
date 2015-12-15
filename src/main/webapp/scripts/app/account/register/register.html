@@ -1,9 +1,9 @@
-<div class="container-fluid register-page">
+<div class="container-fluid register-page cabzza-background">
 	<div class="background">
 
-		<div class="col-sm-offset-2 col-sm-8 col-xs-offset-1 col-xs-10 register-box">
+		<div class="col-sm-offset-2 col-sm-8 col-xs-offset-1 col-xs-10 content-box">
 			<div class="col-sm-12 box-title">
-				<h1 translate="register.title">Registration</h1>
+				<h2 translate="register.title">REGISTRATION</h2>
 
 				<div class="alert alert-success" ng-show="success" translate="register.messages.success">
 					<strong>Registration saved!</strong> Please check your email for confirmation.
@@ -92,7 +92,11 @@
 								Your password cannot be longer than 50 characters.
 							</p>
 						</div>
-						<h4><password-strength-bar password-to-check="registerAccount.password"></password-strength-bar></h4>
+					</div>
+					<div class="row">
+						<div class="col-sm-offset-3 col-sm-6 col-xs-12">
+							<password-strength-bar password-to-check="registerAccount.password"></password-strength-bar>
+						</div>
 					</div>
 				</div>
 				<div class="row">
@@ -117,17 +121,17 @@
 				</div>
 				<div class="row buttons-row">
 
-					<div class="col-sm-offset-1 col-sm-5 col-xs-6 nopadding">
-						<a type="button" class="btn" href="#/">Cancel</a>
+					<div class="col-sm-offset-1 col-sm-4 col-xs-6">
+						<a type="button" class="btn btn-cabzza" href="#/">Cancel</a>
 					</div>
-					<div class="col-sm-5 col-xs-6 nopadding">
-						<button type="submit" ng-disabled="form.$invalid" class="btn" translate="register.form.button">Register</button>
+					<div class="col-sm-offset-2 col-sm-4  col-xs-6">
+						<button type="submit" ng-disabled="form.$invalid" class="btn btn-cabzza" translate="register.form.button">Register</button>
 					</div>
 				</div>
 			</form>
 			<p></p>
 			<div class="alert alert-warning" translate="global.messages.info.authenticated">
-				If you want to <a class="btn" href="#/login">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
+				<p>If you want to </p><a class="btn btn-cabzza" href="#/login">sign in</a><p>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</p>
 			</div>
 		</div>
 	</div>
