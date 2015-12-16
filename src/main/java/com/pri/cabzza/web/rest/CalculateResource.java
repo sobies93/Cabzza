@@ -2,29 +2,14 @@ package com.pri.cabzza.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 
-import com.pri.cabzza.web.rest.util.HeaderUtil;
+import java.math.BigDecimal;
 
 import org.ojalgo.finance.portfolio.MarkowitzModel;
 import org.ojalgo.matrix.BasicMatrix;
 import org.ojalgo.matrix.PrimitiveMatrix;
 
 import org.springframework.http.MediaType;
-
 import org.springframework.web.bind.annotation.*;
-
-import javax.inject.Inject;
-import javax.validation.Valid;
-import java.math.BigDecimal;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
-
-
 
 /**
  * REST controller for managing Calculation.

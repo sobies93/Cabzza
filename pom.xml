@@ -382,13 +382,7 @@
 			<version>${cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
-        <!-- JOptimizer -->
-        <dependency>
-            <groupId>com.joptimizer</groupId>
-            <artifactId>joptimizer</artifactId>
-            <version>3.4.0</version>
-        </dependency>
-        <!-- alternativ optimaization -->
+        <!-- optimaization -->
         <dependency>
             <groupId>org.ojalgo</groupId>
             <artifactId>ojalgo</artifactId>
