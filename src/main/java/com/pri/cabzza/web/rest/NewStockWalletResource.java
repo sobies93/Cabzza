@@ -2,7 +2,9 @@ package com.pri.cabzza.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.pri.cabzza.domain.NewStockWallet;
+import com.pri.cabzza.domain.PortfolioStore;
 import com.pri.cabzza.repository.NewStockWalletRepository;
+import com.pri.cabzza.repository.PortfolioStoreRepository;
 import com.pri.cabzza.repository.search.NewStockWalletSearchRepository;
 import com.pri.cabzza.web.rest.util.HeaderUtil;
 import org.slf4j.Logger;
@@ -17,6 +19,7 @@ import javax.inject.Inject;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -35,6 +38,9 @@ public class NewStockWalletResource {
 
     @Inject
     private NewStockWalletRepository newStockWalletRepository;
+
+    @Inject
+    private PortfolioStoreRepository portfolioStoreRepository;
 
     @Inject
     private NewStockWalletSearchRepository newStockWalletSearchRepository;
@@ -87,6 +93,18 @@ public class NewStockWalletResource {
     public List<NewStockWallet> getAllNewStockWallets() {
         log.debug("REST request to get all NewStockWallets");
         return newStockWalletRepository.findAll();
+    }
+
+    /**
+     * GET  /usersNewStockWallets -> get users newStockWallets.
+     */
+    @RequestMapping(value = "/usersNewStockWallets",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<NewStockWallet> getUsersNewStockWallets() {
+        log.debug("REST request to get all NewStockWallets");
+        return newStockWalletRepository.findByUserIsCurrentUser();
     }
 
     /**

@@ -89,6 +89,22 @@ public class StockInfoResource {
     }
 
     /**
+     * GET  /stockInfosByMode -> get stockInfos.
+     */
+    @RequestMapping(value = "/stockInfosByMode/{mode}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<StockInfo> getAllStockInfosByMode(@PathVariable String mode) {
+        log.debug("REST request to get StockInfos By mode");
+        if(mode.equals("investor")) {
+            return stockInfoRepository.findAllByMode(true);
+        } else {
+            return stockInfoRepository.findAll();
+        }
+    }
+
+    /**
      * GET  /stockInfos/:id -> get the "id" stockInfo.
      */
     @RequestMapping(value = "/stockInfos/{id}",

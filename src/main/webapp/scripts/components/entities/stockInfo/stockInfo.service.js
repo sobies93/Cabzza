@@ -31,3 +31,19 @@ angular.module('cabzzaApp')
             }
         });
     });
+
+angular.module('cabzzaApp')
+    .factory('StockInfoByMode', function ($resource, DateUtils) {
+        return $resource('api/stockInfosByMode/:isInvestor', {}, {
+            'get': {
+                isArray:true,
+                method: 'GET',
+                transformResponse: function (data) {
+                    data = angular.fromJson(data);
+                    data.quotesStartDate = DateUtils.convertLocaleDateFromServer(data.quotesStartDate);
+                    data.quotesEndDate = DateUtils.convertLocaleDateFromServer(data.quotesEndDate);
+                    return data;
+                }
+            }
+        });
+    });

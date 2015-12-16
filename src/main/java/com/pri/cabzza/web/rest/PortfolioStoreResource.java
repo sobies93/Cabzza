@@ -2,6 +2,7 @@ package com.pri.cabzza.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.pri.cabzza.domain.PortfolioStore;
+import com.pri.cabzza.repository.NewStockWalletRepository;
 import com.pri.cabzza.repository.PortfolioStoreRepository;
 import com.pri.cabzza.repository.search.PortfolioStoreSearchRepository;
 import com.pri.cabzza.web.rest.util.HeaderUtil;
@@ -34,6 +35,9 @@ public class PortfolioStoreResource {
 
     @Inject
     private PortfolioStoreRepository portfolioStoreRepository;
+
+    @Inject
+    private NewStockWalletRepository newStockWalletRepository;
 
     @Inject
     private PortfolioStoreSearchRepository portfolioStoreSearchRepository;
@@ -86,6 +90,18 @@ public class PortfolioStoreResource {
     public List<PortfolioStore> getAllPortfolioStores() {
         log.debug("REST request to get all PortfolioStores");
         return portfolioStoreRepository.findAll();
+    }
+
+    /**
+     * GET  portfolioStoresByWallet/:id > get portfolioStores by Wallet id.
+     */
+    @RequestMapping(value = "/portfolioStoresByWallet/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<PortfolioStore> getAllByWallet(@PathVariable Long id) {
+        log.debug("REST request to get all PortfolioStores by Wallet");
+        return portfolioStoreRepository.findAllByNewStockWallet(newStockWalletRepository.findOne(id));
     }
 
     /**

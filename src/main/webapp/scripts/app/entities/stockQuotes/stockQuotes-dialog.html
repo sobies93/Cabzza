@@ -40,7 +40,7 @@
 
         <div class="form-group">
             <label translate="cabzzaApp.stockQuotes.stockInfo" for="field_stockInfo">stockInfo</label>
-            <select class="form-control" id="field_stockInfo" name="stockInfo" ng-model="stockQuotes.stockInfo" ng-options="stockInfo as stockInfo.id for stockInfo in stockinfos track by stockInfo.id">
+            <select class="form-control" id="field_stockInfo" name="stockInfo" ng-model="stockQuotes.stockInfo" ng-options="stockInfo as stockInfo.name for stockInfo in stockinfos track by stockInfo.id">
                 <option value=""></option>
             </select>
         </div>

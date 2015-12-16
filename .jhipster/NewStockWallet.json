@@ -64,6 +64,16 @@
             "fieldId": 8,
             "fieldName": "sharpRatio",
             "fieldType": "Double"
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "isInvestor",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "description",
+            "fieldType": "String"
         }
 
     ],

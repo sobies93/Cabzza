@@ -1,8 +1,47 @@
 'use strict';
 
 angular.module('cabzzaApp')
-    .controller('ProjectViewController', function ($scope, $state, $rootScope) {
-        var lineChartJson = [
+    .controller('ProjectViewController', function ($scope, $state, $stateParams, $rootScope, NewStockWallet, PortfolioStoreByWallet) {
+
+        $scope.pieChartJson = [];
+
+//        $scope.pieChartJson = [
+//                    {
+//                        "company": "Asseco Poland",
+//                        "percent": 20
+//                    },
+//                    {
+//                        "company": "Wartsila Ship Design",
+//                        "percent": 25
+//                    },
+//                    {
+//                        "company": "UXpin",
+//                        "percent": 35
+//                    },
+//                    {
+//                        "company": "DiabetesLab",
+//                        "percent": 20
+//                    }
+//                ]
+        $scope.loadStockWallet = function (id) {
+            NewStockWallet.get({id: id}, function(result) {
+                $scope.stockWallet = result;
+                PortfolioStoreByWallet.get({id: id}, function(result) {
+                    $scope.stockWallet.portfolioStore = result;
+                    //_.each(result, function (portfolioStore) {
+                    for(var i = 0; i< result.length; i++) {
+                        var portfolioStore = result [i];
+                        $scope.pieChartJson.push({"company": portfolioStore.stockInfo.name, "percent": portfolioStore.percent});
+                    }
+                    $scope.pieChartInit();
+                });
+            });
+        };
+        $scope.loadStockWallet($stateParams.id);
+
+
+
+        /*var lineChartJson = [
             {
                 "date": "2012-03-01",
                 "value": 30
@@ -34,25 +73,6 @@ angular.module('cabzzaApp')
             {
                 "date": "2012-04-05",
                 "value": 158
-            }
-        ]
-
-        var pieChartJson = [
-            {
-                "company": "Asseco Poland",
-                "percent": 20
-            },
-            {
-                "company": "Wartsila Ship Design",
-                "percent": 25
-            },
-            {
-                "company": "UXpin",
-                "percent": 35
-            },
-            {
-                "company": "DiabetesLab",
-                "percent": 20
             }
         ]
 
@@ -137,9 +157,9 @@ angular.module('cabzzaApp')
 
 
         };
-        $scope.lineChartInit();
+        $scope.lineChartInit();*/
 
-
+        //TODO: (refactoring) move to service
         $scope.pieChartInit = function () {
 
             var chart;
@@ -147,14 +167,14 @@ angular.module('cabzzaApp')
 
             // PIE CHART
             chart = new AmCharts.AmPieChart();
-            chart.dataProvider = pieChartJson;
+            chart.dataProvider = $scope.pieChartJson;
             chart.titleField = "company";
             chart.valueField = "percent";
             chart.alpha = 0.6;
             chart.hoverAlpha = 1;
             chart.fontFamily = "Lato-Regular";
 
-            /*quite weird for sizing the font, but labels make the chart tiny while font is changed only on @mobile and not changed fot 760-1200px vw*/
+            //quite weird for sizing the font, but labels make the chart tiny while font is changed only on @mobile and not changed fot 760-1200px vw
             chart.fontSize = 15;
 
             if ($(window).width() < 1279) {
@@ -201,5 +221,5 @@ angular.module('cabzzaApp')
             // WRITE
             chart.write("chartdiv1");
         };
-        $scope.pieChartInit();
+
     });

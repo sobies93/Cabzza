@@ -15,92 +15,25 @@
 
                         <table id="keywords" class = "table table-condensed" cellspacing="0" cellpadding="0">
                             <thead>
-                            <tr>
-                                <th><span>One</span></th>
-                                <th><span>Two</span></th>
-                                <th><span>Three</span></th>
-                                <th><span>Four</span></th>
-                                <th><span>Five</span></th>
-                            </tr>
-                            </thead>
+                                <tr>
+                                    <th class="col-md-3" ><span>Nazwa</span></th>
+                                    <th class="col-md-3"><span>Data startowa portfela</span></th>
+                                    <th class="col-md-5"><span>Opis</span></th>
+                                    <th class="col-md-1"><span>Otwórz</span></th>
+                                </tr>
+                                </thead>
                             <tbody>
-                            <tr>
-                                <td class="lalign">silly tshirts</td>
-                                <td>6,000</td>
-                                <td>110</td>
-                                <td>1.8%</td>
-                                <td>22.2</td>
-                            </tr>
-                            <tr>
-                                <td class="lalign">desktop workspace photos</td>
-                                <td>2,200</td>
-                                <td>500</td>
-                                <td>22%</td>
-                                <td>8.9</td>
-                            </tr>
-                            <tr>
-                                <td class="lalign">arrested development quotes</td>
-                                <td>13,500</td>
-                                <td>900</td>
-                                <td>6.7%</td>
-                                <td>12.0</td>
-                            </tr>
-                            <tr>
-                                <td class="lalign">popular web series</td>
-                                <td>8,700</td>
-                                <td>350</td>
-                                <td>4%</td>
-                                <td>7.0</td>
-                            </tr>
-                            <tr>
-                                <td class="lalign">2013 webapps</td>
-                                <td>9,900</td>
-                                <td>460</td>
-                                <td>4.6%</td>
-                                <td>11.5</td>
-                            </tr>
-                            <tr>
-                                <td class="lalign">ring bananaphone</td>
-                                <td>10,500</td>
-                                <td>748</td>
-                                <td>7.1%</td>
-                                <td>17.3</td>
-                            </tr>
-                            <tr>
-                                <td class="lalign">ring bananaphone</td>
-                                <td>10,500</td>
-                                <td>748</td>
-                                <td>7.1%</td>
-                                <td>17.3</td>
-                            </tr>
-                            <tr>
-                                <td class="lalign">ring bananaphone</td>
-                                <td>10,500</td>
-                                <td>748</td>
-                                <td>7.1%</td>
-                                <td>17.3</td>
-                            </tr>
-                            <tr>
-                                <td class="lalign">ring bananaphone</td>
-                                <td>10,500</td>
-                                <td>748</td>
-                                <td>7.1%</td>
-                                <td>17.3</td>
-                            </tr>
-                            <tr>
-                                <td class="lalign">ring bananaphone</td>
-                                <td>10,500</td>
-                                <td>748</td>
-                                <td>7.1%</td>
-                                <td>17.3</td>
-                            </tr>
-                            <tr>
-                                <td class="lalign">ring bananaphone</td>
-                                <td>10,500</td>
-                                <td>748</td>
-                                <td>7.1%</td>
-                                <td>17.3</td>
-                            </tr>
+                                <tr ng-repeat="stockWallet in stockWallets">
+                                    <td>{{stockWallet.name}}</td>
+                                    <td>{{stockWallet.calculatingsDate}}</td>
+                                    <td>{{abrbreviation(stockWallet.description)}}</td>
+                                    <td>
+                                        <button class = "btn cabzza-btn"
+                                                ui-sref="projectView({id:stockWallet.id})">
+                                            Otwórz
+                                        </button>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

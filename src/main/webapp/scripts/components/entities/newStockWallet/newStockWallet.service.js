@@ -34,3 +34,20 @@ angular.module('cabzzaApp')
             }
         });
     });
+
+angular.module('cabzzaApp')
+    .factory('UsersNewStockWallet', function ($resource, DateUtils) {
+        return $resource('api/usersNewStockWallets/:id', {}, {
+            'get': {
+                isArray: true,
+                method: 'GET',
+                transformResponse: function (data) {
+                    data = angular.fromJson(data);
+                    data.historicalDataDate = DateUtils.convertLocaleDateFromServer(data.historicalDataDate);
+                    data.calculatingsDate = DateUtils.convertLocaleDateFromServer(data.calculatingsDate);
+                    data.prognoseDate = DateUtils.convertLocaleDateFromServer(data.prognoseDate);
+                    return data;
+                }
+            }
+        });
+    });
