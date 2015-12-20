@@ -137,7 +137,7 @@ angular.module('cabzzaApp')
 
 
         };
-        $scope.lineChartInit();
+        //$scope.lineChartInit();
 
 
         $scope.pieChartInit = function () {

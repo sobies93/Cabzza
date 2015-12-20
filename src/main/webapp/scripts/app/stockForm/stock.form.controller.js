@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('cabzzaApp')
-		.controller('StockFormController', function ($scope, $state, StockWallet, Account, filterFilter) {
+		.controller('StockFormController', function ($scope, $state, StockWallet, Account, filterFilter, $rootScope) {
 			$scope.datepickerOptions = {
 				language: 'pl',
 				autoclose: true,
@@ -41,5 +41,21 @@ angular.module('cabzzaApp')
 							$state.go('stockForm.step6');
 						});
 			};
+
+            $scope.next = function () {
+                    if ($state.current.name === 'stockForm.step1') {
+                        $state.go('stockForm.step2');
+                    } else if ($state.current.name === 'stockForm.step2') {
+                        $state.go('stockForm.step3');
+                    } else if ($state.current.name === 'stockForm.step3') {
+                         $rootScope.$broadcast('stockForm.sliders');
+                        $state.go('stockForm.step4');
+                    } else if ($state.current.name === 'stockForm.step4') {
+                        $state.go('stockForm.step5');
+                    } else if ($state.current.name === 'stockForm.step5') {
+                        $state.go('projectView');
+                    }
+                };
+
 
 		});
