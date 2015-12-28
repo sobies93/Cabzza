@@ -14,6 +14,9 @@ angular.module('cabzzaApp')
         }
 
         $scope.atLeastOne = function () {
+            if($scope.$parent.transferObject.isChosen == null) {
+                return false
+            }
             for(var i = 0; i < $scope.$parent.transferObject.stocks.length; i++){
                 if($scope.$parent.transferObject.isChosen[i]) {
                     return true;
