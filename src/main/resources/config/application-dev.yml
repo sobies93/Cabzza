@@ -22,8 +22,6 @@ spring:
         driver-class-name: org.postgresql.ds.PGSimpleDataSource
         url: jdbc:postgresql://localhost:5432/Cabzza
         name:
-        username: postgres
-        password: 
     jpa:
         database-platform: com.pri.cabzza.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL
