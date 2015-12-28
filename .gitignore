@@ -33,6 +33,9 @@ local.properties
 .settings/**
 .loadpath
 /src/main/resources/rebel.xml
+/src/main/resources/config/application-dev.yml
+/src/main/webapp/bower_components/**
+/node_modules/**
 
 # External tool builders
 .externalToolBuilders/**

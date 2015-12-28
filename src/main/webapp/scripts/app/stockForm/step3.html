@@ -29,12 +29,13 @@
 						<h6>Wybierz akcje na której chcesz przeprowadzić analizę:</h6>
 					</div>
 				</div>
+                 {{isChosen}}
 				<div class="row inside-box form-group">
 					<div class="row" ng-repeat = "stock in transferObject.stocks">
 						<div class="col-sm-offset-2 col-sm-5">
 							<div class="row">
 								<div class="checkbox">
-									<input type="checkbox"  ng-model = "isChoosen [$index]">
+									<input type="checkbox"  ng-model = "transferObject.isChosen [$index]">
 									<label>
 										<p>{{stock.name}}</p>
 									</label>
@@ -45,7 +46,7 @@
 				</div>
 				<div class="row box-title">
 					<div class="col-sm-offset-9 col-sm-3">
-						<button type="button" class="btn" ng-click="next()" >Dalej</button>
+						<button type="button" class="btn" ng-click="next()" ng-disabled = "!atLeastOne()" >Dalej</button>
 					</div>
 				</div>
 			</div>
