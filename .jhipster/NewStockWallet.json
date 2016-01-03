@@ -1,0 +1,84 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "portfolioStore",
+            "otherEntityName": "portfolioStore",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "newStockWallet"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "historicalDataDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "calculatingsDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "prognoseDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "riskfreeRate",
+            "fieldType": "Double"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "expectedReturn",
+            "fieldType": "Double"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "expectedVariation",
+            "fieldType": "Double"
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "sharpRatio",
+            "fieldType": "Double"
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "isInvestor",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+
+    ],
+    "changelogDate": "20151209201934",
+    "dto": "no",
+    "service": "no",
+    "pagination": "no"
+}

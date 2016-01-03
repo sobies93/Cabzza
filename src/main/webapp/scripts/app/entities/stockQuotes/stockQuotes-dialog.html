@@ -1,0 +1,56 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myStockQuotesLabel" translate="cabzzaApp.stockQuotes.home.createOrEditLabel">Create or edit a StockQuotes</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="stockQuotes.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.stockQuotes.date" for="field_date">Date</label>
+            <input type="date" class="form-control" name="date" id="field_date"
+                    ng-model="stockQuotes.date"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.stockQuotes.value" for="field_value">Value</label>
+            <input type="number" class="form-control" name="value" id="field_value"
+                    ng-model="stockQuotes.value"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.stockQuotes.splitRate" for="field_splitRate">SplitRate</label>
+            <input type="number" class="form-control" name="splitRate" id="field_splitRate"
+                    ng-model="stockQuotes.splitRate"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="cabzzaApp.stockQuotes.dividend" for="field_dividend">Dividend</label>
+            <input type="number" class="form-control" name="dividend" id="field_dividend"
+                    ng-model="stockQuotes.dividend"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="cabzzaApp.stockQuotes.stockInfo" for="field_stockInfo">stockInfo</label>
+            <select class="form-control" id="field_stockInfo" name="stockInfo" ng-model="stockQuotes.stockInfo" ng-options="stockInfo as stockInfo.name for stockInfo in stockinfos track by stockInfo.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,90 @@
+<div>
+    <h2 translate="cabzzaApp.stockInfo.home.title">StockInfos</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="stockInfo.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="cabzzaApp.stockInfo.home.createLabel">Create a new StockInfo</span>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="query">
+                    </div>
+                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a StockInfo</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteStockInfoConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(stockInfo.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="cabzzaApp.stockInfo.delete.question" translate-values="{id: '{{stockInfo.id}}'}">Are you sure you want to delete this StockInfo?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.field.id">ID</th>
+                    <th translate="cabzzaApp.stockInfo.name">Name</th>
+                    <th translate="cabzzaApp.stockInfo.symbol">Symbol</th>
+                    <th translate="cabzzaApp.stockInfo.quotesStartDate">QuotesStartDate</th>
+                    <th translate="cabzzaApp.stockInfo.quotesEndDate">QuotesEndDate</th>
+                    <th translate="cabzzaApp.stockInfo.isInvestorModeAvaiable">IsInvestorModeAvaiable</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="stockInfo in stockInfos track by stockInfo.id">
+                    <td><a ui-sref="stockInfo.detail({id:stockInfo.id})">{{stockInfo.id}}</a></td>
+                    <td>{{stockInfo.name}}</td>
+                    <td>{{stockInfo.symbol}}</td>
+                        <td>{{stockInfo.quotesStartDate | date:'mediumDate'}}</td>
+                        <td>{{stockInfo.quotesEndDate | date:'mediumDate'}}</td>
+                    <td>{{stockInfo.isInvestorModeAvaiable}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="stockInfo.detail({id:stockInfo.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="stockInfo.edit({id:stockInfo.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(stockInfo.id)"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

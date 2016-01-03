@@ -1,0 +1,24 @@
+{
+    "cabzzaApp": {
+        "stockInfo" : {
+            "home": {
+                "title": "StockInfo",
+                "createLabel": "Dodaj StockInfo",
+                "createOrEditLabel": "Dodaj lub edytuj: StockInfo"
+            },
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć StockInfo {{ id }}?"
+            },
+            "detail": {
+                "title": "StockInfo"
+            },
+            "name": "Name",
+            "symbol": "Symbol",
+            "quotesStartDate": "QuotesStartDate",
+            "quotesEndDate": "QuotesEndDate",
+            "isInvestorModeAvaiable": "IsInvestorModeAvaiable",
+            "stockQuotes": "StockQuotes",
+            "portfolioStore": "PortfolioStore"
+        }
+    }
+}

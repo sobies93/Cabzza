@@ -5,7 +5,7 @@ angular.module('cabzzaApp')
         $stateProvider
             .state('projectView', {
                 parent: 'site',
-                url: '/projectView',
+                url: '/projectView/{id}',
                 data: {
                     authorities: []
                 },

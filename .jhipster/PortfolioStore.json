@@ -1,0 +1,29 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "newStockWallet",
+            "otherEntityName": "newStockWallet",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "stockInfo",
+            "otherEntityName": "stockInfo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "percent",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20151209201934",
+    "dto": "no",
+    "service": "no",
+    "pagination": "no"
+}

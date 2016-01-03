@@ -30,7 +30,20 @@
                     <ul class="dropdown-menu">
                         <li ui-sref-active="active" ><a ui-sref="stockWallet" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
                         &#xA0;<span translate="global.menu.entities.stockWallet">stockWallet</span></a></li>
-                        <!-- JHipster will add entities to the menu here -->
+
+                        <li ui-sref-active="active" ><a ui-sref="stockQuotes" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.entities.stockQuotes">stockQuotes</span></a></li>
+
+                        <li ui-sref-active="active" ><a ui-sref="stockInfo" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.entities.stockInfo">stockInfo</span></a></li>
+
+                        <li ui-sref-active="active" ><a ui-sref="portfolioStore" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.entities.portfolioStore">portfolioStore</span></a></li>
+
+                        <li ui-sref-active="active" ><a ui-sref="newStockWallet" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.entities.newStockWallet">newStockWallet</span></a></li>
+
+                        <!-- JHipster will add entities to the menu here or not -->
                     </ul>
                 </li>
                 <li ng-class="{active: $state.includes('account')}" class="dropdown pointer">
@@ -97,8 +110,8 @@
                         </li>
 							<li class="dropdown pointer" ng-controller="QuoteFormController">
                     </ul>
-                </li> 
-			
+                </li>
+
                 </li>
             </ul>
         </div>

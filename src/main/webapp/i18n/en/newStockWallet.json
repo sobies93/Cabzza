@@ -1,0 +1,30 @@
+{
+    "cabzzaApp": {
+        "newStockWallet" : {
+            "home": {
+                "title": "NewStockWallets",
+                "createLabel": "Create a new NewStockWallet",
+                "createOrEditLabel": "Create or edit a NewStockWallet"
+            },
+            "created": "A new NewStockWallet is created with identifier {{ param }}",
+            "updated": "A NewStockWallet is updated with identifier {{ param }}",
+            "deleted": "A NewStockWallet is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete NewStockWallet {{ id }}?"
+            },
+            "detail": {
+                "title": "NewStockWallet"
+            },
+            "name": "Name",
+            "historicalDataDate": "HistoricalDataDate",
+            "calculatingsDate": "CalculatingsDate",
+            "prognoseDate": "PrognoseDate",
+            "riskfreeRate": "RiskfreeRate",
+            "expectedReturn": "ExpectedReturn",
+            "expectedVariation": "ExpectedVariation",
+            "sharpRatio": "SharpRatio",
+            "user": "User",
+            "portfolioStore": "PortfolioStore"
+        }
+    }
+}
