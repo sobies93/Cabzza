@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('cabzzaApp')
-		.controller('StockFormController', function ($scope, $state, StockWallet, Account, filterFilter, $rootScope) {
+		.controller('StockFormController', function ($scope, $state, StockWallet, Account, filterFilter, $rootScope,
+		StockInfoByMode) {
 			$scope.datepickerOptions = {
 				language: 'pl',
 				autoclose: true,
@@ -42,20 +43,42 @@ angular.module('cabzzaApp')
 						});
 			};
 
-            $scope.next = function () {
-                    if ($state.current.name === 'stockForm.step1') {
-                        $state.go('stockForm.step2');
-                    } else if ($state.current.name === 'stockForm.step2') {
-                        $state.go('stockForm.step3');
-                    } else if ($state.current.name === 'stockForm.step3') {
-                         $rootScope.$broadcast('stockForm.sliders');
-                        $state.go('stockForm.step4');
-                    } else if ($state.current.name === 'stockForm.step4') {
-                        $state.go('stockForm.step5');
-                    } else if ($state.current.name === 'stockForm.step5') {
-                        $state.go('projectView');
-                    }
-                };
+            $scope.init = function () {
+                $scope.$parent.stockWallet = {};
+                $scope.$parent.transferObject = {};
+            }
+            if ($state.current.name === 'stockForm.step1') {
+                $scope.init();
+            }
 
+            $scope.atLeastOne = function () {
+                if($scope.$parent.transferObject.isChosen == null) {
+                    return false
+                }
+                for(var i = 0; i < $scope.$parent.transferObject.stocks.length; i++){
+                    if($scope.$parent.transferObject.isChosen[i]) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            $scope.next = function () {
+                if ($state.current.name === 'stockForm.step1') {
+                    StockInfoByMode.get({isInvestor: ($scope.stockWallet.isInvestor ? 'investor' : 'student')}, function (result)  {
+                        $scope.$parent.transferObject.stocks = result;
+                        $state.go('stockForm.step2');
+                    });
+                } else if ($state.current.name === 'stockForm.step2') {
+                    $state.go('stockForm.step3');
+                } else if ($state.current.name === 'stockForm.step3') {
+                     $rootScope.$broadcast('sliders');
+                    $state.go('stockForm.step4');
+                } else if ($state.current.name === 'stockForm.step4') {
+                    $state.go('stockForm.step5');
+                } else if ($state.current.name === 'stockForm.step5') {
+                    $state.go('projectView');
+                }
+            };
 
 		});
