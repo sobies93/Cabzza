@@ -176,6 +176,7 @@ ul#strength {
     margin: 0;
 }
 /* end of Custom alerts for notification */
+
 /* general styles for Cabzza */
     /* BUTTON */
 
@@ -239,14 +240,40 @@ ul#strength {
         border-bottom: none;
         position: auto;
     }
+
+    .navbar-brand {
+        margin: 0;
+        padding: 25px 0 0 20px;
+        width: 200px;
+        text-align: left;
+    }
+
+    .navbar-brand h4,
+    .navbar-brand i {
+        color: rgba(119,34,17,1);
+        display: inline;
+    }
+
+    .navbar-brand i {
+        font-size: 22px;
+    }
+
+    @media(max-width:768px) {
+
+        .navbar-brand {
+            padding: 25px 0 0 0;    
+        }
+
+    }
+
     h1, h2, h3, h4, h5, h6, p {
         margin-bottom: 0;
         margin-top: 0;
         padding: 0;
         border: 0;
+        display: inline;
     }
-    p,
-    textarea {
+    p {
         font-size: 10px;
     }
     h1 {
@@ -261,13 +288,21 @@ ul#strength {
     h4 {
         font-size: 22px;
     }
-    h5 {
+    h5,
+    textarea {
         font-size: 18px;
     }
     h6,
     small,
     span {
         font-size: 15px;
+    }
+
+    @media(min-width:768px) {
+
+        .hide-in-desktop {
+            display: none;
+        }
     }
 
     @media(max-width:768px) {
@@ -319,7 +354,7 @@ ul#strength {
             font-size: 10%;
         }
     }
-    .input-style,
+
     .input-style {
         height: 50px;
         width: 100%;
@@ -344,13 +379,18 @@ ul#strength {
         margin-bottom: 10%;
     } 
     .box-title {
-        padding-top: 8%;
+        padding-top: 2%;
         padding-bottom: 5%;
         text-align: center;
     }
+
+    .box-footer {
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
     .inside-box {
-        margin: 5%;
-        padding-top: 5%;
+        padding-top: 2%;
         padding-bottom: 2%;
     }
     @media(max-width:768px) {
@@ -364,7 +404,8 @@ ul#strength {
     }
     /* end of data/content boxes in login, register, steps */
 /* end of general styles for Cabzza */
-/* Custom styles for index /////////////////////////////////////////////////////////////*/
+
+/* Custom styles for index /////////////////////////////////////////////////*/
     /* intro section */
     .intro-section {
         background-image: url('../IMG/background_m.jpg');
@@ -557,11 +598,12 @@ ul#strength {
     }
     /* end of content section */
 /* end of Custom styles for index */
-/* footer /////////////////////////////////////////////////////////////*/
+
+/* footer //////////////////////////////////////////////////////////////////*/
     .footer {
         height: 100%;
         padding-top: 5%;
-        background-color: white;
+        background-color: rgba(255,242,220,1);
         text-align: left;
     }
     @media(max-width:750px) {
@@ -574,7 +616,8 @@ ul#strength {
         }
     }
 /* end of footer */
-/* register page / login page styles */
+
+/* register page / login page styles ///////////////////////////////////////*/
     #strengthBar { /* password strength bar */
         display: inline;
         margin: 0;
@@ -585,7 +628,8 @@ ul#strength {
          border: solid rgba(119,34,17,0.6) 1px;
     }
 /* end of register page / login page styles */
-/* custom styles for steps/////////////////////////////////////////////////////////////*/
+
+/* custom styles for steps /////////////////////////////////////////////////*/
     /*buttons in steps for mobile*/
     @media(max-width:768px) {
         .btn-next {
@@ -600,35 +644,19 @@ ul#strength {
             float: right;
         }
     }
-    /*icon describing the state (growth, drop or no-change) of each of listed companies*/
-    i.stateIcon {
-        display: inline-block;
-        margin: 0;
-        padding: 0;
-        width: 40px;
-        text-align: center;
-        font-size: 30px;
+
+    .checkbox {
+        text-align: left;
     }
-    .stateIcon.fa-angle-double-up {
-        color: green;
+
+    .input-desc {
+        text-align: right;
     }
-    .stateIcon.fa-angle-double-down {
-        color: red;
+
+    .description-text {
+        background-color: rgba(119,34,17,0.1); 
     }
-    .stateIcon.fa-arrows-h {
-        color: blue;
-    }
-    @media(max-width:768px) {   
-        i.stateIcon {
-            width: 30px;
-            font-size: 20px;
-        }
-    }
-    /*positioning of sliders and titles in step 4*/
-    .row .row-padding {
-        padding-top: 2%;
-        padding-bottom: 2%;
-    }
+
     .sliderPositioning {
         padding-top: 2.5%;
     }
@@ -660,7 +688,7 @@ ul#strength {
     }
     .input-style.date-field {
         height: 40px;
-        width: 40%;
+        width: auto;
         padding: 5px;
         text-align: center;
     }
@@ -672,7 +700,12 @@ ul#strength {
             text-align: center;
         }
     }
-    /*custom style for dropdown-input*/
+
+    /*style for "instructions" on the right of step 5*/
+    .dropdown-menu span:hover {
+        background-color: rgba(119,34,17,0.3);
+    }
+    /*custom style for dropdown-input*//*
     .dropdown-input .btn {
         width: 50px;
         height: 50px;
@@ -725,14 +758,10 @@ ul#strength {
         .step-box .dropdown-input select {
             width: 100%;
         }
-    }
-    /*style for "instructions" on the right of step 5*/
-    .dropdown-menu span:hover {
-        background-color: rgba(119,34,17,0.3);
-    }
+    }*/
 /* end of custom styles for steps */
-/* custom styles for account view///////////////////////////////////////////////////*/
 
+/* custom styles for account view //////////////////////////////////////////*/
     /** page structure **/
     .projects-table h5 {
 
@@ -750,6 +779,7 @@ ul#strength {
 
     .table-row {
         border-top: 1px solid rgba(119,34,17,1);
+        padding: 1%;
     }
 
     #newProjectButton {
@@ -762,11 +792,15 @@ ul#strength {
         padding-bottom: 5px;
     }
 
+    .open-button {
+    
+    }
+
     .open-button i {
         color: rgba(119,34,17,1);
     }
 
-@media(max-width:768px) {
+    @media(max-width:768px) {
 
         .projects-table .enlarge-text {
             font-size: 20px;
@@ -787,5 +821,12 @@ ul#strength {
         }
 
     }
+/*end of custom styles for account view */
 
-/*end of custom styles for account view*/
+/* custom styles for project view //////////////////////////////////////////*/
+    textarea {
+        width: 100%;
+        margin-top: 5%;
+        margin-bottom: 3%;
+    }
+/* end ofcustom styles for project view */
