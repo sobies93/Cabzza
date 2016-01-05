@@ -1,14 +1,14 @@
 <!-- Intro Section -->
-<div class="cabzza-background">
+<div class="cabzza-background step-mobile">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="col-xs-12 add-padding-top">
 				<h2 class="">SPRAWDŹ SWOJĄ GIEŁDĘ
 				</h2>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="col-xs-12 add-padding-top">
 				<h4 class="">OBLICZ SWÓJ PORTFEL
 				</h4>
 			</div>
@@ -23,25 +23,29 @@
 		<!--step-1-->
 
 		<div class="row">
-			 <div class="col-sm-offset-1 col-sm-10 col xs-12 content-box">
+			 <div class="col-sm-offset-1 col-sm-10 col-xs-12 content-box">
 				<div class="row box-title">
-					<div class="col-sm-2 text-diff-height">
+					<div class="col-sm-2 col-xs-5 text-diff-height">
 						<h4>KROK </h4><h2>1</h2>
 					</div>
-					<div class="col-sm-8">
-						<h3><br>Wybierz tryb</h3>
+					<div class="col-sm-8 col-xs-12 add-padding-top">
+						<h3>Wybierz tryb</h3>
 					</div>
 				</div>
 				<div class="row inside-box">
-					<div class="col-sm-offset-2 col-sm-3 col-xs-6 nopadding">
-						<a type="radio" class="btn btn-cabzza btn-invert" ng-click = "modeIsInvestor = true" data-bind="checked: priority"><h5>INWESTORSKI</h5></a>
+					<div class="col-xs-6 nopadding">
+						<div class="col-sm-offset-3 col-sm-9 col-xs-offset-1 col-xs-10 nopadding">
+							<a type="radio" class="btn btn-cabzza btn-invert" ng-click = "modeIsInvestor = true" data-bind="checked: priority"><h5>INWESTORSKI</h5></a>
+						</div>
 					</div>
-					<div class="col-sm-offset-2 col-sm-3 col-xs-6 nopadding">
-						<a type="radio" class="btn btn-cabzza btn-invert" ng-click = "modeIsInvestor = false" data-bind="checked: priority"><h5>EDUKACYJNY</h5></a>
+					<div class="col-xs-6 nopadding">
+						<div class="col-sm-9 col-xs-offset-1 col-xs-10 nopadding">
+							<a type="radio" class="btn btn-cabzza btn-invert" ng-click = "modeIsInvestor = false" data-bind="checked: priority"><h5>EDUKACYJNY</h5></a>
+						</div>
 					</div>
 				</div>
 				<div class="row box-footer">
-					<div class="col-sm-offset-9 col-sm-3">
+					<div class="col-sm-offset-9 col-sm-3 col-xs-offset-8 col-xs-4">
 						<button type="button" class="btn btn-cabzza btn-invert btn-next" ng-click="next()" ng-disabled = "modeIsInvestor == null" >Dalej</button>
 					</div>
 				</div>
