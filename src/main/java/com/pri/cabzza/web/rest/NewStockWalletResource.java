@@ -5,7 +5,9 @@ import com.pri.cabzza.domain.NewStockWallet;
 import com.pri.cabzza.domain.PortfolioStore;
 import com.pri.cabzza.repository.NewStockWalletRepository;
 import com.pri.cabzza.repository.PortfolioStoreRepository;
+import com.pri.cabzza.repository.UserRepository;
 import com.pri.cabzza.repository.search.NewStockWalletSearchRepository;
+import com.pri.cabzza.security.SecurityUtils;
 import com.pri.cabzza.web.rest.util.HeaderUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,6 +45,9 @@ public class NewStockWalletResource {
     private PortfolioStoreRepository portfolioStoreRepository;
 
     @Inject
+    private UserRepository userRepository;
+
+    @Inject
     private NewStockWalletSearchRepository newStockWalletSearchRepository;
 
     /**
@@ -56,6 +61,9 @@ public class NewStockWalletResource {
         log.debug("REST request to save NewStockWallet : {}", newStockWallet);
         if (newStockWallet.getId() != null) {
             return ResponseEntity.badRequest().header("Failure", "A new newStockWallet cannot already have an ID").body(null);
+        }
+        if (newStockWallet.getUser() != null) {
+            newStockWallet.setUser(userRepository.findOne(SecurityUtils.getCurrentUserId()));
         }
         NewStockWallet result = newStockWalletRepository.save(newStockWallet);
         newStockWalletSearchRepository.save(result);

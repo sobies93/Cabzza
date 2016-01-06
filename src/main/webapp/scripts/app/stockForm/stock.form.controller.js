@@ -2,7 +2,7 @@
 
 angular.module('cabzzaApp')
 		.controller('StockFormController', function ($scope, $state, StockWallet, Account, filterFilter, $rootScope,
-		StockInfoByMode) {
+		StockInfoByMode,NewStockWallet) {
 			$scope.datepickerOptions = {
 				language: 'pl',
 				autoclose: true,
@@ -51,6 +51,36 @@ angular.module('cabzzaApp')
                 $scope.init();
             }
 
+            $scope.getMaxDate = function (a,b) {
+                console.log(a);
+                console.log(b);
+
+                if(a.getTime() > b.getTime()) {
+                    return a;
+                }
+                return b;
+            };
+
+            $scope.getMinDate = function (a,b) {
+                if(a.getTime() > b.getTime()) {
+                    return b;
+                }
+                return a;
+            };
+
+            $scope.calculateData = function (){
+                $scope.$parent.maxDate = new Date();
+                $scope.$parent.minDate = new Date("1970-01-01");
+                 for(var i = 0; i < $scope.$parent.transferObject.stocks.length; i++){
+                        if($scope.$parent.transferObject.isChosen[i]) {
+                            $scope.$parent.maxDate = $scope.getMaxDate($scope.$parent.maxDate, new Date ($scope.$parent.transferObject.stocks[i].quotesStartDate));
+                            $scope.$parent.minDate = $scope.getMinDate($scope.$parent.minDate, new Date ($scope.$parent.transferObject.stocks[i].quotesEndDate));
+                        }
+                    }
+                    return false;
+
+            };
+
             $scope.atLeastOne = function () {
                 if($scope.$parent.transferObject.isChosen == null) {
                     return false
@@ -72,12 +102,23 @@ angular.module('cabzzaApp')
                 } else if ($state.current.name === 'stockForm.step2') {
                     $state.go('stockForm.step3');
                 } else if ($state.current.name === 'stockForm.step3') {
-                     $rootScope.$broadcast('sliders');
+                    $rootScope.$broadcast('sliders');
+                    $scope.calculateData();
                     $state.go('stockForm.step4');
                 } else if ($state.current.name === 'stockForm.step4') {
                     $state.go('stockForm.step5');
                 } else if ($state.current.name === 'stockForm.step5') {
-                    $state.go('projectView');
+                    $scope.$parent.stockWallet.id = null;
+                    if(!$scope.$parent.stockWallet.historicalDataDate) {
+                        var current = new Date ();
+                        $scope.$parent.stockWallet.historicalDataDate = new Date (current.getTime() - ($scope.$parent.stockWallet.prognoseDate.getTime() - current.getTime()));
+                    }
+                    if(!$scope.$parent.stockWallet.calculatingsDate) {
+                        $scope.$parent.stockWallet.calculatingsDate = new Date ();
+                    }
+                    NewStockWallet.save($scope.$parent.stockWallet, function (data){
+                        $state.go('projectView');
+                    });
                 }
             };
 
