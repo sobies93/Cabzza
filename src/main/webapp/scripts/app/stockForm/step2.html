@@ -1,42 +1,41 @@
 <!-- Intro Section -->
-    <section class="intro-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h1 class="">SPRAWDŹ SWOJĄ GIEŁDĘ
-                    </h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <h4 class="">OBLICZ SWÓJ PORTFEL
-                    </h4>
-                </div>
+<div class="cabzza-background">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 add-padding-top">
+                <h2 class="">SPRAWDŹ SWOJĄ GIEŁDĘ
+                </h2>
             </div>
         </div>
-    </section>
-<div class = "cabzza-background">
+        <div class="row">
+            <div class="col-xs-12 add-padding-top">
+                <h4 class="">OBLICZ SWÓJ PORTFEL
+                </h4>
+            </div>
+        </div>
+    </div>
+
 <!-- Content Section -->
     <section class="content-section">
         <div class="container-fluid">
         <div class="row">
-                <div class="col-sm-offset-1 col-sm-10 col xs-12 step-box">
+                <div class="col-sm-offset-1 col-sm-10 col-xs-12 content-box">
                     <div class="row box-title">
-                        <div class="col-sm-2 text-diff-height">
-                            <h6>KROK </h6><h3>2</h3>
+                        <div class="col-sm-2 col-xs-5 text-diff-height">
+                            <h4>KROK </h4><h2>2</h2>
                         </div>
-                        <div class="col-sm-10">
-                            <h6>Wpisz nazwę projektu</h6>
+                        <div class="col-sm-8 col-xs-12 add-padding-top">
+                            <h3>Wpisz nazwę projektu</h3>
                         </div>
                     </div>
                     <div class="row inside-box">
-                        <div class="col-sm-offset-1 col-sm-10 col-xs-12 input-group">
-                                <input type="text" class="input-style" ng-model = "stockWallet.name" placeholder="NAZWA PROJEKTU" aria-describedby="">
+                        <div class="col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 input-group">
+                                <input type="text" class="input-style" ng-model = "stockWallet.name" placeholder="nazwa projektu" aria-describedby="">
                         </div>
                     </div>
-                    <div class="row box-title">
-                        <div class="col-sm-offset-9 col-sm-3">
-                            <button type="button" class="btn" ng-click="next()" ng-disabled = "!stockWallet.name">Dalej</button>
+                    <div class="row box-footer">
+                        <div class="col-sm-offset-9 col-sm-3 col-xs-offset-8 col-xs-4">
+                            <button type="button" class="btn btn-cabzza btn-invert btn-next" ng-click="next()" ng-disabled = "!stockWallet.name">Dalej</button>
                         </div>
                     </div>
                 </div>

@@ -1,51 +1,50 @@
-<div class="cabzza-background"> <!-- Intro Section -->
-    <section class="intro-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h1 class="">SPRAWDŹ SWOJĄ GIEŁDĘ
-                    </h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <h4 class="">OBLICZ SWÓJ PORTFEL
-                    </h4>
-                </div>
+<!-- Intro Section -->
+<div class="cabzza-background">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 add-padding-top">
+                <h2 class="">SPRAWDŹ SWOJĄ GIEŁDĘ
+                </h2>
             </div>
         </div>
-    </section>
+        <div class="row">
+            <div class="col-xs-12 add-padding-top">
+                <h4 class="">OBLICZ SWÓJ PORTFEL
+                </h4>
+            </div>
+        </div>
+    </div>
 {{transferObject.stocks}}
     <!-- Content Section -->
     <section class="content-section">
         <div class="container-fluid">
             <div class="row">
-                 <div class="col-sm-offset-1 col-sm-10 col xs-12 step-box">
+                 <div class="col-sm-offset-1 col-sm-10 col-xs-12 content-box">
                     <div class="row box-title">
-                        <div class="col-sm-2 text-diff-height">
-                            <h6>KROK </h6><h3>3</h3>
+                        <div class="col-sm-2 col-xs-5 text-diff-height">
+                            <h4>KROK </h4><h2>3</h2>
                         </div>
-                        <div class="col-sm-10">
-                            <h6>Wybierz akcje na której chcesz przeprowadzić analizę:</h6>
+                        <div class="col-sm-8 col-xs-12 add-padding-top">
+                            <h3>Wybierz akcje na której chcesz przeprowadzić analizę:</h3>
                         </div>
                     </div>
                     <div class="row inside-box form-group">
                         <div class="row" ng-repeat = "stock in transferObject.stocks">
-                            <div class="col-sm-offset-2 col-sm-5">
+                            <div class="col-sm-offset-2 col-sm-5 col-xs-offset-3 col-xs-9">
                                 <div class="row">
                                     <div class="checkbox">
                                         <input type="checkbox"  ng-model = "transferObject.isChosen [$index]">
                                         <label>
-                                            <p>{{stock.name}}</p>
+                                            <h4>{{stock.name}}</h4>
                                         </label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row box-title">
-                        <div class="col-sm-offset-9 col-sm-3">
-                            <button type="button" class="btn" ng-click="next()" ng-disabled = "!atLeastOne()" >Dalej</button>
+                    <div class="row box-footer">
+                        <div class="col-sm-offset-9 col-sm-3 col-xs-offset-8 col-xs-4">
+                            <button type="button" class="btn btn-cabzza btn-invert btn-next" ng-click="next()" ng-disabled = "!atLeastOne()" >Dalej</button>
                         </div>
                     </div>
                 </div>

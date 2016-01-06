@@ -1,10 +1,9 @@
 <div class="container-fluid register-page cabzza-background">
-	<div class="background">
-
+	<div class="row">
 		<div class="col-sm-offset-2 col-sm-8 col-xs-offset-1 col-xs-10 content-box">
-			<div class="col-sm-12 box-title">
-				<h2 translate="register.title">REGISTRATION</h2>
-
+			<div class="col-xs-12 col-sm-12 box-title">
+				<h2 translate="register.title">Rejestracja</h2>
+			</div>
 				<div class="alert alert-success" ng-show="success" translate="register.messages.success">
 					<strong>Registration saved!</strong> Please check your email for confirmation.
 				</div>
@@ -24,10 +23,10 @@
 				<div class="alert alert-danger" ng-show="doNotMatch" translate="global.messages.error.dontmatch">
 					The password and its confirmation do not match!
 				</div>
-			</div>
+
 			<form ng-show="!success" name="form" role="form" novalidate ng-submit="register()" show-validation>
 				<div class="row">
-					<div class="col-sm-offset-1 col-sm-10 col-xs-12 input-group">
+					<div class="col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 input-group">
 						<input type="text" class="input-style" id="login" name="login" placeholder="{{'global.form.username.placeholder'| translate}}"
 							   ng-model="registerAccount.login" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[a-z0-9]*$/" required>
 						<div ng-show="form.login.$dirty && form.login.$invalid">
@@ -51,7 +50,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-offset-1 col-sm-10 col-xs-12 input-group">
+					<div class="col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 input-group">
 						<input type="email" class="input-style" id="email" name="email" placeholder="{{'global.form.email.placeholder'| translate}}"
 							   ng-model="registerAccount.email" ng-minlength=5 ng-maxlength=100 required>
 						<div ng-show="form.email.$dirty && form.email.$invalid">
@@ -75,7 +74,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-offset-1 col-sm-10 col-xs-12 input-group">
+					<div class="col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 input-group">
 						<input type="password" class="input-style" id="password" name="password" placeholder="{{'global.form.newpassword.placeholder'| translate}}"
 							   ng-model="registerAccount.password" ng-minlength=5 ng-maxlength=50 required>
 						<div ng-show="form.password.$dirty && form.password.$invalid">
@@ -100,7 +99,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-offset-1 col-sm-10 col-xs-12 input-group">
+					<div class="col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 input-group">
 						<input type="password" class="input-style" id="confirmPassword" name="confirmPassword" placeholder="{{'global.form.confirmpassword.placeholder'| translate}}"
 							   ng-model="confirmPassword" ng-minlength=5 ng-maxlength=50 required>
 						<div ng-show="form.confirmPassword.$dirty && form.confirmPassword.$invalid">
@@ -121,10 +120,10 @@
 				</div>
 				<div class="row buttons-row">
 
-					<div class="col-sm-offset-1 col-sm-4 col-xs-6">
+					<div class="col-sm-offset-1 col-sm-4 col-xs-6 nopadding">
 						<a type="button" class="btn btn-cabzza" href="#/">Cancel</a>
 					</div>
-					<div class="col-sm-offset-2 col-sm-4  col-xs-6">
+					<div class="col-sm-offset-2 col-sm-4  col-xs-6 nopadding">
 						<button type="submit" ng-disabled="form.$invalid" class="btn btn-cabzza" translate="register.form.button">Register</button>
 					</div>
 				</div>
@@ -134,5 +133,5 @@
 				<p>If you want to </p><a class="btn btn-cabzza" href="#/login">sign in</a><p>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</p>
 			</div>
 		</div>
-	</div>
+		</div>
 </div>
