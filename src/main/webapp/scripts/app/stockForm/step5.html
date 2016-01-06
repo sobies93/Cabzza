@@ -20,57 +20,58 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			 <div class="col-sm-offset-1 col-sm-10 col-xs-12 content-box">
-				<div class="row box-title">
-					<div class="col-sm-2 col-xs-5 text-diff-height">
-						<h4>KROK </h4><h2>5</h2>
-					</div>
-					<div class="col-sm-8 col-xs-12 add-padding-top">
-						<h3>Parametry inwestycji</h3>
-					</div>
-				</div>
-				<div class="row inside-box">
-					<div class="col-sm-6">
-					</div>
+            <div class="col-sm-offset-1 col-sm-10 col-xs-12 content-box">
+                <div class="row box-title">
+                    <div class="col-sm-2 col-xs-5 text-diff-height">
+                        <h4>KROK </h4><h2>5</h2>
+                    </div>
+                    <div class="col-sm-8 col-xs-12 add-padding-top">
+                        <h3>Parametry inwestycji</h3>
+                    </div>
+                </div>
+                <div class="row inside-box">
 
-					<div class="col-sm-6 col-xs-12">
+                    <div class="col-sm-6 col-xs-12">
 
-							<div class="row" ng-if = "stockWallet.modeIsInvestor">
-                                <label>Data zakończenia inwestycji</label>
-                                <input ng-model = "stockWallet.prognoseDate" class="date-field input-style" data-format="dd/MM/yyyy" type="date">
-                            </div>
+                        <div class="row" ng-if = "stockWallet.modeIsInvestor">
+                            <label>Data zakończenia inwestycji</label>
+                            <input ng-model = "stockWallet.prognoseDate" class="date-field input-style" data-format="dd/MM/yyyy" type="date">
+                        </div>
 
-                            <div class="row" ng-if = "!stockWallet.modeIsInvestor">
-                                <label>Data porównania prognozy</label>
-                                <input ng-model = "stockWallet.prognoseDate" max = "{{maxDate}}" class="date-field input-style" data-format="dd/MM/yyyy" type="date">
-                            </div>
+                        <div class="row" ng-if = "!stockWallet.modeIsInvestor">
+                            <label>Data porównania prognozy</label>
+                            <input ng-model = "stockWallet.prognoseDate" max = "{{maxDate}}" class="date-field input-style" data-format="dd/MM/yyyy" type="date">
+                        </div>
 
-							<div class="row" ng-if = "!stockWallet.modeIsInvestor">
-                                <label>Data rozpoczęcia inwestycji</label>
-                                <input ng-model = "stockWallet.calculatingsDate" min = "{{minDate}}"class="date-field input-style" data-format="dd/MM/yyyy" type="date">
-                            </div>
+                        <div class="row" ng-if = "!stockWallet.modeIsInvestor">
+                            <label>Data rozpoczęcia inwestycji</label>
+                            <input ng-model = "stockWallet.calculatingsDate" min = "{{minDate}}"class="date-field input-style" data-format="dd/MM/yyyy" type="date">
+                        </div>
 
-                            <div class="row" ng-if = "!stockWallet.modeIsInvestor">
-                                <label>Zakres danych historycznych</label>
-                                <input ng-model = "stockWallet.historicalDataDate" min = "{{minDate}}" class="date-field input-style" data-format="dd/MM/yyyy" type="date">
+                        <div class="row" ng-if = "!stockWallet.modeIsInvestor">
+                            <label>Zakres danych historycznych</label>
+                            <input ng-model = "stockWallet.historicalDataDate" min = "{{minDate}}" class="date-field input-style" data-format="dd/MM/yyyy" type="date">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="row">
+                            <div class="col-sm-offset-1 col-sm-10 description-text">
+                                <h6>Przysłonił Wilnie dwadzieścia osobki nieodrodził górze suknia Konfederatom pannom Młodzieniec przyglądał. Zabor wodę wiejskicb Wiele dobra woły roscięte pusto zabierać siedlisko kurantowy psina. Lisem gród Rzeczypospolitéj najpiękniejszéj Najpiękniejszego nagle zdał oboje kilku stogi. Probie Pleban całej swoich Białopiotrowiczowi Hrabia rządu. Siadł prorok Białopiotrowiczowi Barona Zawsze. Najpiękniejszéj Nawet Zatem Kolor Najpiękniejszego dwór Rzeczypospolitéj Prawa.</h6>
+                                <textarea ng-model = "stockWallet.description"></textarea>
                             </div>
                         </div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-offset-1 col-sm-10 description-text">
-						<h6>Przysłonił Wilnie dwadzieścia osobki nieodrodził górze suknia Konfederatom pannom Młodzieniec przyglądał. Zabor wodę wiejskicb Wiele dobra woły roscięte pusto zabierać siedlisko kurantowy psina. Lisem gród Rzeczypospolitéj najpiękniejszéj Najpiękniejszego nagle zdał oboje kilku stogi. Probie Pleban całej swoich Białopiotrowiczowi Hrabia rządu. Siadł prorok Białopiotrowiczowi Barona Zawsze. Najpiękniejszéj Nawet Zatem Kolor Najpiękniejszego dwór Rzeczypospolitéj Prawa.</h6>
-						<textarea ng-model = "stockWallet.description"></textarea>
-					</div>
-				</div>
+                    </div>
+                </div>
 
-					
-			
-				<div class="row box-footer">
-					<div class="col-sm-offset-9 col-sm-3 col-xs-offset-8 col-xs-4">
-						<button type="button" class="btn btn-cabzza btn-invert btn-next" ng-click="next()" >Dalej</button>
-					</div>
-				</div>
+
+
+
+                <div class="row box-footer">
+                    <div class="col-sm-offset-9 col-sm-3 col-xs-offset-8 col-xs-4">
+                        <button type="button" class="btn btn-cabzza btn-invert btn-next" ng-click="next()" >Dalej</button>
+                    </div>
+                </div>
 			</div>
 		</div>
 
