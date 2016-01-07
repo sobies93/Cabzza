@@ -561,6 +561,7 @@
 				<artifactId>liquibase-maven-plugin</artifactId>
 				<version>${liquibase.version}</version>
 				<configuration>
+					<include file="src/main/resources/config/liquibase/changelog/00000000000000_initial_schema.xml"relativeToChangelogFile="false"/>
 					<changeLogFile>src/main/resources/config/liquibase/master.xml</changeLogFile>
 					<diffChangeLogFile>src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
 					<driver>org.postgresql.Driver</driver>
@@ -622,6 +623,15 @@
 			</dependencies>
 			<build>
 				<plugins>
+					<plugin>
+						<groupId>org.apache.tomcat.maven</groupId>
+						<artifactId>tomcat7-maven-plugin</artifactId>
+						<version>2.2</version>
+						<configuration>
+						<warName>cabzza</warName>
+				    		<debug>true</debug>
+						</configuration>
+					</plugin>
 					<plugin>
 						<groupId>com.github.trecloux</groupId>
 						<artifactId>yeoman-maven-plugin</artifactId>
