@@ -564,9 +564,9 @@
 					<changeLogFile>src/main/resources/config/liquibase/master.xml</changeLogFile>
 					<diffChangeLogFile>src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
 					<driver>org.postgresql.Driver</driver>
-					<url>jdbc:postgresql://localhost/Cabzza</url>
+					<url>jdbc:postgresql://localhost:5432/Cabzza</url>
 					<defaultSchemaName></defaultSchemaName>
-					<username>Cabzza</username>
+					<username>postgres</username>
 					<password></password>
 					<referenceUrl>hibernate:spring:com.pri.cabzza.domain?dialect=org.hibernate.dialect.PostgreSQL82Dialect</referenceUrl>
 					<verbose>true</verbose>
