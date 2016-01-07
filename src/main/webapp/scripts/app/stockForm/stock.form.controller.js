@@ -2,7 +2,7 @@
 
 angular.module('cabzzaApp')
 		.controller('StockFormController', function ($scope, $state, StockWallet, Account, filterFilter, $rootScope,
-		StockInfoByMode,NewStockWallet) {
+		StockInfoByMode,NewStockWallet, PortfolioStore) {
 			$scope.datepickerOptions = {
 				language: 'pl',
 				autoclose: true,
@@ -93,9 +93,28 @@ angular.module('cabzzaApp')
                 return false;
             }
 
+            $scope.dateValidation = function () {
+                if(!$scope.stockWallet.prognoseDate) {
+                    return false
+                }
+                if(!$scope.stockWallet.modeIsInvestor&&!$scope.stockWallet.calculatingsDate&&!$scope.stockWallet.historicalDataDate) {
+                    return false;
+                }
+                return true;
+            };
+
+            $scope.addStocks = function (walletId) {
+                $scope.stockWallet.portfolioStores = [];
+                for(var i = 0; i < $scope.$parent.transferObject.stocks.length; i++){
+                    if($scope.$parent.transferObject.isChosen[i]) {
+                        PortfolioStore.save({ stockInfo : {id:$scope.$parent.transferObject.stocks[i].id}, newStockWallet : {id: walletId}});
+                    }
+                }
+            }
+
             $scope.next = function () {
                 if ($state.current.name === 'stockForm.step1') {
-                    StockInfoByMode.get({isInvestor: ($scope.stockWallet.isInvestor ? 'investor' : 'student')}, function (result)  {
+                    StockInfoByMode.get({isInvestor: ($scope.stockWallet.modeIsInvestor ? 'investor' : 'student')}, function (result)  {
                         $scope.$parent.transferObject.stocks = result;
                         $state.go('stockForm.step2');
                     });
@@ -106,6 +125,11 @@ angular.module('cabzzaApp')
                     $scope.calculateData();
                     $state.go('stockForm.step4');
                 } else if ($state.current.name === 'stockForm.step4') {
+                    if($scope.setReturn) {
+                        $scope.$parent.stockWallet.expectedVariation = null;
+                    } else {
+                        $scope.$parent.stockWallet.expectedReturn = null;
+                    }
                     $state.go('stockForm.step5');
                 } else if ($state.current.name === 'stockForm.step5') {
                     $scope.$parent.stockWallet.id = null;
@@ -117,6 +141,7 @@ angular.module('cabzzaApp')
                         $scope.$parent.stockWallet.calculatingsDate = new Date ();
                     }
                     NewStockWallet.save($scope.$parent.stockWallet, function (data){
+                        $scope.addStocks(data.id);
                         $state.go('projectView');
                     });
                 }

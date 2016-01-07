@@ -62,11 +62,11 @@ public class NewStockWalletResource {
         if (newStockWallet.getId() != null) {
             return ResponseEntity.badRequest().header("Failure", "A new newStockWallet cannot already have an ID").body(null);
         }
-        if (newStockWallet.getUser() != null) {
+        if (newStockWallet.getUser() == null) {
             newStockWallet.setUser(userRepository.findOne(SecurityUtils.getCurrentUserId()));
         }
         NewStockWallet result = newStockWalletRepository.save(newStockWallet);
-        newStockWalletSearchRepository.save(result);
+        //newStockWalletSearchRepository.save(result);
         return ResponseEntity.created(new URI("/api/newStockWallets/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("newStockWallet", result.getId().toString()))
             .body(result);
