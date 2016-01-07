@@ -602,6 +602,16 @@
 					</arguments>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+				<warName>cabzza</warName>
+		    		<debug>true</debug>
+				<warFile>${project.build.directory}/${project.build.finalName}.original.war</warFile>	
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -623,15 +633,6 @@
 			</dependencies>
 			<build>
 				<plugins>
-					<plugin>
-						<groupId>org.apache.tomcat.maven</groupId>
-						<artifactId>tomcat7-maven-plugin</artifactId>
-						<version>2.2</version>
-						<configuration>
-						<warName>cabzza</warName>
-				    		<debug>true</debug>
-						</configuration>
-					</plugin>
 					<plugin>
 						<groupId>com.github.trecloux</groupId>
 						<artifactId>yeoman-maven-plugin</artifactId>
