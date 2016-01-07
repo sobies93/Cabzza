@@ -561,12 +561,13 @@
 				<artifactId>liquibase-maven-plugin</artifactId>
 				<version>${liquibase.version}</version>
 				<configuration>
+					<include file="src/main/resources/config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
 					<changeLogFile>src/main/resources/config/liquibase/master.xml</changeLogFile>
 					<diffChangeLogFile>src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
 					<driver>org.postgresql.Driver</driver>
-					<url>jdbc:postgresql://localhost/Cabzza</url>
+					<url>jdbc:postgresql://localhost:5432/Cabzza</url>
 					<defaultSchemaName></defaultSchemaName>
-					<username>Cabzza</username>
+					<username>postgres</username>
 					<password></password>
 					<referenceUrl>hibernate:spring:com.pri.cabzza.domain?dialect=org.hibernate.dialect.PostgreSQL82Dialect</referenceUrl>
 					<verbose>true</verbose>
@@ -599,6 +600,16 @@
 					<arguments>
 						<argument>--spring.profiles.active=dev</argument>
 					</arguments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+				<warName>cabzza</warName>
+		    		<debug>true</debug>
+				<warFile>${project.build.directory}/${project.build.finalName}.war.original</warFile>	
 				</configuration>
 			</plugin>
 		</plugins>

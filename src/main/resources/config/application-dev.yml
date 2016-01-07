@@ -23,7 +23,7 @@ spring:
         url: jdbc:postgresql://localhost:5432/Cabzza
         name:
         username: postgres
-        password: michal.9damyrade
+        password: 
     jpa:
         database-platform: com.pri.cabzza.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL
