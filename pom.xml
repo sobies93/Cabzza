@@ -561,7 +561,7 @@
 				<artifactId>liquibase-maven-plugin</artifactId>
 				<version>${liquibase.version}</version>
 				<configuration>
-					<include file="src/main/resources/config/liquibase/changelog/00000000000000_initial_schema.xml"relativeToChangelogFile="false"/>
+					<include file="src/main/resources/config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"s/>
 					<changeLogFile>src/main/resources/config/liquibase/master.xml</changeLogFile>
 					<diffChangeLogFile>src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
 					<driver>org.postgresql.Driver</driver>
@@ -609,7 +609,7 @@
 				<configuration>
 				<warName>cabzza</warName>
 		    		<debug>true</debug>
-				<warFile>${project.build.directory}/${project.build.finalName}.original.war</warFile>	
+				<warFile>${project.build.directory}/${project.build.finalName}.war.original</warFile>	
 				</configuration>
 			</plugin>
 		</plugins>
