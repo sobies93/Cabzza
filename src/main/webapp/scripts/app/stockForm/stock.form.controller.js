@@ -2,7 +2,7 @@
 
 angular.module('cabzzaApp')
 		.controller('StockFormController', function ($scope, $state, StockWallet, Account, filterFilter, $rootScope,
-		StockInfoByMode,NewStockWallet, PortfolioStore) {
+		StockInfoByMode,NewStockWallet, PortfolioStore, Calculation) {
 			$scope.datepickerOptions = {
 				language: 'pl',
 				autoclose: true,
@@ -103,13 +103,24 @@ angular.module('cabzzaApp')
                 return true;
             };
 
-            $scope.addStocks = function (walletId) {
-                $scope.stockWallet.portfolioStores = [];
+            $scope.portfolioPromiseHandler = function (stockId, walletId) {
+                return new Promise(function(resolve, reject) {
+                    PortfolioStore.save({ stockInfo : {id: stockId}, newStockWallet : {id: walletId}}, function (){
+                        resolve(true);
+                    });
+                });
+            }
+
+            $scope.addStocks = function (walletId, callback) {
+                var promises = [];
                 for(var i = 0; i < $scope.$parent.transferObject.stocks.length; i++){
                     if($scope.$parent.transferObject.isChosen[i]) {
-                        PortfolioStore.save({ stockInfo : {id:$scope.$parent.transferObject.stocks[i].id}, newStockWallet : {id: walletId}});
+                         promises.push($scope.portfolioPromiseHandler($scope.$parent.transferObject.stocks[i].id,walletId));
                     }
                 }
+                Promise.all(promises).then( function() {
+                    callback()
+                });
             }
 
             $scope.next = function () {
@@ -141,8 +152,12 @@ angular.module('cabzzaApp')
                         $scope.$parent.stockWallet.calculatingsDate = new Date ();
                     }
                     NewStockWallet.save($scope.$parent.stockWallet, function (data){
-                        $scope.addStocks(data.id);
-                        $state.go('projectView');
+                        $scope.addStocks(data.id, function(){
+                            Calculation.make({walletId:data.id},function () {
+                                $state.go('projectView');
+                            });
+                        });
+
                     });
                 }
             };

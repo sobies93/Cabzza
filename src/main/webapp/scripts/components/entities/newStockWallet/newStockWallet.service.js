@@ -51,3 +51,19 @@ angular.module('cabzzaApp')
             }
         });
     });
+
+angular.module('cabzzaApp')
+    .factory('Calculation', function ($resource, DateUtils) {
+        return $resource('api/calculateStockWallet/:walletId', {}, {
+            'make': {
+                method: 'GET',
+                transformResponse: function (data) {
+                    data = angular.fromJson(data);
+                    data.historicalDataDate = DateUtils.convertLocaleDateFromServer(data.historicalDataDate);
+                    data.calculatingsDate = DateUtils.convertLocaleDateFromServer(data.calculatingsDate);
+                    data.prognoseDate = DateUtils.convertLocaleDateFromServer(data.prognoseDate);
+                    return data;
+                }
+            }
+        });
+    });
