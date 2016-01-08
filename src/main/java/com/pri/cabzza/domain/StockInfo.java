@@ -40,12 +40,12 @@ public class StockInfo implements Serializable {
     @Column(name = "is_investor_mode_avaiable")
     private Boolean isInvestorModeAvaiable;
 
-    @OneToMany(mappedBy = "stockInfo")
+    @OneToMany(mappedBy = "stockInfo", cascade=CascadeType.ALL)
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<StockQuotes> stockQuotess = new HashSet<>();
 
-    @OneToMany(mappedBy = "stockInfo")
+    @OneToMany(mappedBy = "stockInfo", cascade=CascadeType.ALL)
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<PortfolioStore> portfolioStores = new HashSet<>();

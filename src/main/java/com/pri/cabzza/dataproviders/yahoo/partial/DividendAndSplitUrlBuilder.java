@@ -1,4 +1,4 @@
-package com.pri.cabzza.dataproviders.yahoo;
+package com.pri.cabzza.dataproviders.yahoo.partial;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -7,10 +7,10 @@ import java.util.GregorianCalendar;
  *
  * @author Mikolaj Manski
  */
-public class DividendAndSplitUrlBuilder extends AbstractYahooUrlBuilder {
+class DividendAndSplitUrlBuilder extends AbstractYahooUrlBuilder {
 
 	private static final String URL_PATTERN
-			= "http://ichart.finance.yahoo.com/table.csv?s=&s&a=%s&b=&s&c=&s&d=&s&e=&s&f=%s&g=d&ignore=.csv";
+			= "http://ichart.finance.yahoo.com/x?s=%s&a=%s&b=%s&c=%s&d=%s&e=%s&f=%s&g=v&y=0&z=30000";
 
 	private final Calendar startPoint;
 

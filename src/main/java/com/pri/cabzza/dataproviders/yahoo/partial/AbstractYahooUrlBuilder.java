@@ -1,4 +1,4 @@
-package com.pri.cabzza.dataproviders.yahoo;
+package com.pri.cabzza.dataproviders.yahoo.partial;
 
 import java.util.Date;
 
@@ -6,7 +6,7 @@ import java.util.Date;
  *
  * @author Mikolaj Manski
  */
-public abstract class AbstractYahooUrlBuilder {
+abstract class AbstractYahooUrlBuilder {
 
 	protected Date startDate;
 

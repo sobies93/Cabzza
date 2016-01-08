@@ -23,7 +23,7 @@ spring:
         url: jdbc:postgresql://localhost:5432/Cabzza
         name:
         username: postgres
-        password: michal.9damyrade
+        password: 
     jpa:
         database-platform: com.pri.cabzza.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL
@@ -41,8 +41,15 @@ spring:
                 path:
                   logs: target/elasticsearch/log
                   data: target/elasticsearch/data
-    mail:
-        host: localhost
+    mail: # specific JHipster mail property, for standard properties see MailProperties
+        host: smtp.zoho.com
+        port: 587
+        username: support@cabzza.com
+        password: cabzza12345
+        protocol: smtp
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
     messages:
         cache-seconds: 1
     thymeleaf:
@@ -63,8 +70,6 @@ jhipster:
         timeToLiveSeconds: 3600
         ehcache:
             maxBytesLocalHeap: 16M
-    mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: Cabzza@localhost
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         spark:

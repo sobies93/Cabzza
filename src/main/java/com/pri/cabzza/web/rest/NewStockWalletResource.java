@@ -91,7 +91,7 @@ public class NewStockWalletResource {
 
         for (PortfolioStore portfolio : portfolios) {
             Set<StockQuotes> quotes = new HashSet<>();
-            quotes.addAll(stockQuotesRepository.kurwaAllByStockInfoId(portfolio.getStockInfo().getId()));
+            quotes.addAll(stockQuotesRepository.allByStockInfoId(portfolio.getStockInfo().getId()));
             StockInfo currentStockInfo = stockInfoRepository.findOne(portfolio.getStockInfo().getId());
             currentStockInfo.setStockQuotess(quotes);
             portfolio.setStockInfo(currentStockInfo);
