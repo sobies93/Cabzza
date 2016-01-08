@@ -35,18 +35,18 @@
 				<div class="row inside-box">
 					<div class="col-xs-6 nopadding">
 						<div class="col-sm-offset-3 col-sm-9 col-xs-offset-1 col-xs-10 nopadding">
-							<a type="radio" class="btn btn-cabzza btn-invert" ng-click = "stockWallet.modeIsInvestor  = true" data-bind="checked: priority"><h5>INWESTORSKI</h5></a>
+							<a type="radio" class="btn btn-cabzza btn-invert" ng-click = "stockWallet.isInvestor  = true" data-bind="checked: priority"><h5>INWESTORSKI</h5></a>
 						</div>
 					</div>
 					<div class="col-xs-6 nopadding">
 						<div class="col-sm-9 col-xs-offset-1 col-xs-10 nopadding">
-							<a type="radio" class="btn btn-cabzza btn-invert" ng-click = "stockWallet.modeIsInvestor  = false" data-bind="checked: priority"><h5>EDUKACYJNY</h5></a>
+							<a type="radio" class="btn btn-cabzza btn-invert" ng-click = "stockWallet.isInvestor  = false" data-bind="checked: priority"><h5>EDUKACYJNY</h5></a>
 						</div>
 					</div>
 				</div>
 				<div class="row box-footer">
 					<div class="col-sm-offset-9 col-sm-3 col-xs-offset-8 col-xs-4">
-						<button type="button" class="btn btn-cabzza btn-invert btn-next" ng-click="next()" ng-disabled = "stockWallet.modeIsInvestor == null" >Dalej</button>
+						<button type="button" class="btn btn-cabzza btn-invert btn-next" ng-click="next()" ng-disabled = "stockWallet.isInvestor == null" >Dalej</button>
 					</div>
 				</div>
 			</div>

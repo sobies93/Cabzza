@@ -98,7 +98,7 @@ angular.module('cabzzaApp')
                 if(!$scope.stockWallet.prognoseDate) {
                     return false
                 }
-                if(!$scope.stockWallet.modeIsInvestor&&!$scope.stockWallet.calculatingsDate&&!$scope.stockWallet.historicalDataDate) {
+                if(!$scope.stockWallet.isInvestor&&!$scope.stockWallet.calculatingsDate&&!$scope.stockWallet.historicalDataDate) {
                     return false;
                 }
                 return true;
@@ -126,7 +126,7 @@ angular.module('cabzzaApp')
 
             $scope.next = function () {
                 if ($state.current.name === 'stockForm.step1') {
-                    StockInfoByMode.get({isInvestor: ($scope.stockWallet.modeIsInvestor ? 'investor' : 'student')}, function (result)  {
+                    StockInfoByMode.get({isInvestor: ($scope.stockWallet.isInvestor ? 'investor' : 'student')}, function (result)  {
                         $scope.$parent.transferObject.stocks = result;
                         $state.go('stockForm.step2');
                     });

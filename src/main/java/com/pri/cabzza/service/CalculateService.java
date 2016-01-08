@@ -74,7 +74,23 @@ public class CalculateService {
         expectedVariation = Math.sqrt(expectedVariation);
         startingWallet.setExpectedVariation(expectedVariation);
         startingWallet.setExpectedReturn(expextedReturn);
-        startingWallet.setSharpRatio(expextedReturn/expectedVariation*100);
+        startingWallet.setSharpRatio(expextedReturn / expectedVariation * 100);
+        if(!startingWallet.getIsInvestor()) {
+            ArrayList<ArrayList<Double>> realReturns = new ArrayList<>();
+            for (int i = 0; i < portfolioContent.size(); i++) {
+                PortfolioStore content = portfolioContent.get(i);
+                realReturns.add(new ArrayList<Double>() {
+                });
+                realReturns.get(i).addAll(returnsCalculation(filterByDate(new ArrayList<>(content.getStockInfo().getStockQuotess()),
+                    startingWallet.getCalculatingsDate(), startingWallet.getPrognoseDate())));
+            }
+            Double realReturn = new Double(0);
+            for(int k = 0 ; k < portfolioContent.size();k++) {
+                realReturn += (calculateReturn(realReturns.get(k))*weights.get(k).doubleValue());
+            }
+            startingWallet.setRealReturn(realReturn);
+        }
+
         return startingWallet;
     }
 

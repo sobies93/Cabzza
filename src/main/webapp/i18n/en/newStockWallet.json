@@ -23,6 +23,10 @@
             "expectedReturn": "ExpectedReturn",
             "expectedVariation": "ExpectedVariation",
             "sharpRatio": "SharpRatio",
+            "isInvestor": "IsInvestor",
+            "description": "Description",
+            "realVariation": "RealVariation",
+            "realReturn": "RealReturn",
             "user": "User",
             "portfolioStore": "PortfolioStore"
         }
