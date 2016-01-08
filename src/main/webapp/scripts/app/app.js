@@ -2,7 +2,7 @@
 
 angular.module('cabzzaApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pascalprecht.translate',
                'ui.bootstrap', // for modal dialogs
-    'ngResource', 'ui.router', 'ngCookies', 'ngAria', 'ngCacheBuster', 'ngFileUpload', 'infinite-scroll', 'ng-bootstrap-datepicker', 'ui.bootstrap-slider', 'ui.select','ngSanitize'])
+    'ngResource', 'ui.router', 'ngCookies', 'ngAria', 'ngCacheBuster', 'ngFileUpload', 'infinite-scroll', 'ng-bootstrap-datepicker', 'ui.bootstrap-slider'])
 
     .run(function ($rootScope, $location, $window, $http, $state, $translate, Language, Auth, Principal, ENV, VERSION) {
         $rootScope.ENV = ENV;
@@ -60,7 +60,7 @@ angular.module('cabzzaApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pascalp
         //enable CSRF
         $httpProvider.defaults.xsrfCookieName = 'CSRF-TOKEN';
         $httpProvider.defaults.xsrfHeaderName = 'X-CSRF-TOKEN';
-		
+
         //Cache everything except rest api requests
         httpRequestInterceptorCacheBusterProvider.setMatchlist([/.*api.*/, /.*protected.*/], true);
 
@@ -112,5 +112,5 @@ angular.module('cabzzaApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pascalp
             equals: function(a, b) { return this.is(a) && a === b; },
             is: function(val) { return [true,false,0,1].indexOf(val) >= 0 },
             pattern: /bool|true|0|1/
-    });
+        });
     }]);;

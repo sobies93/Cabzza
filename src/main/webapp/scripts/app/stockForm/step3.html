@@ -18,7 +18,7 @@
     <section class="content-section">
         <div class="container-fluid">
             <div class="row">
-				<div class="col-sm-offset-1 col-sm-10 col-xs-12 content-box">
+                 <div class="col-sm-offset-1 col-sm-10 col-xs-12 content-box">
                     <div class="row box-title">
                         <div class="col-sm-2 col-xs-5 text-diff-height">
                             <h4>KROK </h4><h2>3</h2>
@@ -27,23 +27,20 @@
                             <h3>Wybierz akcje na której chcesz przeprowadzić analizę:</h3>
                         </div>
                     </div>
-					<div class="row inside-box form-group">
-						<span><ui-select ng-model="quote.data"
-										 theme="bootstrap"
-										 ng-disabled="disabled"
-										 reset-search-input="false"
-										 style="width: 300px;">
-								<ui-select-match placeholder="Wprowadz nazwe akcji">{{$select.selected.name}}, {{$select.selected.symbol}}</ui-select-match>
-								<ui-select-choices repeat="quote in quotes"
-												   refresh="refreshQuotes($select.search)"
-												   refresh-delay="0">
-									<div ng-bind-html="quote.name + ', ' + quote.symbol | highlight: $select.search"></div>
-								</ui-select-choices>
-							</ui-select></span>					<button ng-click="add()" class="btn btn-cabzza btn-invert" >Dodaj</button>
-						<ul ng-repeat="qt in selectedQuotes">
-							<li>{{qt.name}}</li> <button ng-click="remove(qt)" class="btn btn-cabzza btn-invert" >Usun</button>
-						</ul>
-					</div>
+                    <div class="row inside-box form-group">
+                        <div class="row" ng-repeat = "stock in transferObject.stocks">
+                            <div class="col-sm-offset-2 col-sm-5 col-xs-offset-3 col-xs-9">
+                                <div class="row">
+                                    <div class="checkbox">
+                                        <input type="checkbox"  ng-model = "transferObject.isChosen [$index]">
+                                        <label>
+                                            <h4>{{stock.name}}</h4>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row box-footer">
                         <div class="col-sm-offset-9 col-sm-3 col-xs-offset-8 col-xs-4">
                             <button type="button" class="btn btn-cabzza btn-invert btn-next" ng-click="next()" ng-disabled = "!atLeastOne()" >Dalej</button>
