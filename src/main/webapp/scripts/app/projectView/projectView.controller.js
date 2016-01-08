@@ -162,6 +162,9 @@ angular.module('cabzzaApp')
                 "#FFF8DC"
             ];
 
+            $scope.roundTwoDigits = function (value) {
+                return (Math.round(value*100) / 100);
+            };
             // LEGEND
             legend = new AmCharts.AmLegend();
             legend.align = "center";

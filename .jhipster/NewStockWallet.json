@@ -74,7 +74,21 @@
             "fieldId": 10,
             "fieldName": "description",
             "fieldType": "String"
+        },
+        {
+            "fieldId": 11,
+            "fieldName": "realVariation",
+            "fieldType": "Double"
+        },
+        {
+            "fieldId": 12,
+            "fieldName": "realReturn",
+            "fieldType": "Double"
         }
+
+
+
+
 
     ],
     "changelogDate": "20151209201934",

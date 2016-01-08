@@ -74,7 +74,6 @@ public class PortfolioStoreResource {
             return createPortfolioStore(portfolioStore);
         }
         PortfolioStore result = portfolioStoreRepository.save(portfolioStore);
-        portfolioStoreSearchRepository.save(portfolioStore);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("portfolioStore", portfolioStore.getId().toString()))
             .body(result);

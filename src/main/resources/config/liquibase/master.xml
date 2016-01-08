@@ -13,5 +13,6 @@
     <include file="config/liquibase/changelog/20151209205511_added_entity_StockQuotes.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20151209201934_added_entity_PortfolioStore.xml" relativeToChangelogFile="false"/>
 
+    <include file="classpath:config/liquibase/changelog/20151209201934_added_entity_NewStockWallet.xml" relativeToChangelogFile="false"/>
     <!-- JHipster will add liquibase changelogs here -->
 </databaseChangeLog>

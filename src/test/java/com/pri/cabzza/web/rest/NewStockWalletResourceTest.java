@@ -68,6 +68,17 @@ public class NewStockWalletResourceTest {
     private static final Double DEFAULT_SHARP_RATIO = 1D;
     private static final Double UPDATED_SHARP_RATIO = 2D;
 
+    private static final Boolean DEFAULT_IS_INVESTOR = false;
+    private static final Boolean UPDATED_IS_INVESTOR = true;
+    private static final String DEFAULT_DESCRIPTION = "AAAAA";
+    private static final String UPDATED_DESCRIPTION = "BBBBB";
+
+    private static final Double DEFAULT_REAL_VARIATION = 1D;
+    private static final Double UPDATED_REAL_VARIATION = 2D;
+
+    private static final Double DEFAULT_REAL_RETURN = 1D;
+    private static final Double UPDATED_REAL_RETURN = 2D;
+
     @Inject
     private NewStockWalletRepository newStockWalletRepository;
 
@@ -106,6 +117,10 @@ public class NewStockWalletResourceTest {
         newStockWallet.setExpectedReturn(DEFAULT_EXPECTED_RETURN);
         newStockWallet.setExpectedVariation(DEFAULT_EXPECTED_VARIATION);
         newStockWallet.setSharpRatio(DEFAULT_SHARP_RATIO);
+        newStockWallet.setIsInvestor(DEFAULT_IS_INVESTOR);
+        newStockWallet.setDescription(DEFAULT_DESCRIPTION);
+        newStockWallet.setRealVariation(DEFAULT_REAL_VARIATION);
+        newStockWallet.setRealReturn(DEFAULT_REAL_RETURN);
     }
 
     @Test
@@ -132,6 +147,10 @@ public class NewStockWalletResourceTest {
         assertThat(testNewStockWallet.getExpectedReturn()).isEqualTo(DEFAULT_EXPECTED_RETURN);
         assertThat(testNewStockWallet.getExpectedVariation()).isEqualTo(DEFAULT_EXPECTED_VARIATION);
         assertThat(testNewStockWallet.getSharpRatio()).isEqualTo(DEFAULT_SHARP_RATIO);
+        assertThat(testNewStockWallet.getIsInvestor()).isEqualTo(DEFAULT_IS_INVESTOR);
+        assertThat(testNewStockWallet.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
+        assertThat(testNewStockWallet.getRealVariation()).isEqualTo(DEFAULT_REAL_VARIATION);
+        assertThat(testNewStockWallet.getRealReturn()).isEqualTo(DEFAULT_REAL_RETURN);
     }
 
     @Test
@@ -206,7 +225,11 @@ public class NewStockWalletResourceTest {
                 .andExpect(jsonPath("$.[*].riskfreeRate").value(hasItem(DEFAULT_RISKFREE_RATE.doubleValue())))
                 .andExpect(jsonPath("$.[*].expectedReturn").value(hasItem(DEFAULT_EXPECTED_RETURN.doubleValue())))
                 .andExpect(jsonPath("$.[*].expectedVariation").value(hasItem(DEFAULT_EXPECTED_VARIATION.doubleValue())))
-                .andExpect(jsonPath("$.[*].sharpRatio").value(hasItem(DEFAULT_SHARP_RATIO.doubleValue())));
+                .andExpect(jsonPath("$.[*].sharpRatio").value(hasItem(DEFAULT_SHARP_RATIO.doubleValue())))
+                .andExpect(jsonPath("$.[*].isInvestor").value(hasItem(DEFAULT_IS_INVESTOR.booleanValue())))
+                .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())))
+                .andExpect(jsonPath("$.[*].realVariation").value(hasItem(DEFAULT_REAL_VARIATION.doubleValue())))
+                .andExpect(jsonPath("$.[*].realReturn").value(hasItem(DEFAULT_REAL_RETURN.doubleValue())));
     }
 
     @Test
@@ -227,7 +250,11 @@ public class NewStockWalletResourceTest {
             .andExpect(jsonPath("$.riskfreeRate").value(DEFAULT_RISKFREE_RATE.doubleValue()))
             .andExpect(jsonPath("$.expectedReturn").value(DEFAULT_EXPECTED_RETURN.doubleValue()))
             .andExpect(jsonPath("$.expectedVariation").value(DEFAULT_EXPECTED_VARIATION.doubleValue()))
-            .andExpect(jsonPath("$.sharpRatio").value(DEFAULT_SHARP_RATIO.doubleValue()));
+            .andExpect(jsonPath("$.sharpRatio").value(DEFAULT_SHARP_RATIO.doubleValue()))
+            .andExpect(jsonPath("$.isInvestor").value(DEFAULT_IS_INVESTOR.booleanValue()))
+            .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()))
+            .andExpect(jsonPath("$.realVariation").value(DEFAULT_REAL_VARIATION.doubleValue()))
+            .andExpect(jsonPath("$.realReturn").value(DEFAULT_REAL_RETURN.doubleValue()));
     }
 
     @Test
@@ -255,6 +282,10 @@ public class NewStockWalletResourceTest {
         newStockWallet.setExpectedReturn(UPDATED_EXPECTED_RETURN);
         newStockWallet.setExpectedVariation(UPDATED_EXPECTED_VARIATION);
         newStockWallet.setSharpRatio(UPDATED_SHARP_RATIO);
+        newStockWallet.setIsInvestor(UPDATED_IS_INVESTOR);
+        newStockWallet.setDescription(UPDATED_DESCRIPTION);
+        newStockWallet.setRealVariation(UPDATED_REAL_VARIATION);
+        newStockWallet.setRealReturn(UPDATED_REAL_RETURN);
 
         restNewStockWalletMockMvc.perform(put("/api/newStockWallets")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -273,6 +304,10 @@ public class NewStockWalletResourceTest {
         assertThat(testNewStockWallet.getExpectedReturn()).isEqualTo(UPDATED_EXPECTED_RETURN);
         assertThat(testNewStockWallet.getExpectedVariation()).isEqualTo(UPDATED_EXPECTED_VARIATION);
         assertThat(testNewStockWallet.getSharpRatio()).isEqualTo(UPDATED_SHARP_RATIO);
+        assertThat(testNewStockWallet.getIsInvestor()).isEqualTo(UPDATED_IS_INVESTOR);
+        assertThat(testNewStockWallet.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
+        assertThat(testNewStockWallet.getRealVariation()).isEqualTo(UPDATED_REAL_VARIATION);
+        assertThat(testNewStockWallet.getRealReturn()).isEqualTo(UPDATED_REAL_RETURN);
     }
 
     @Test

@@ -53,6 +53,18 @@ public class NewStockWallet implements Serializable {
     @Column(name = "sharp_ratio")
     private Double sharpRatio;
 
+    @Column(name = "is_investor")
+    private Boolean isInvestor;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "real_variation")
+    private Double realVariation;
+
+    @Column(name = "real_return")
+    private Double realReturn;
+
     @ManyToOne
     private User user;
 
@@ -133,6 +145,38 @@ public class NewStockWallet implements Serializable {
         this.sharpRatio = sharpRatio;
     }
 
+    public Boolean getIsInvestor() {
+        return isInvestor;
+    }
+
+    public void setIsInvestor(Boolean isInvestor) {
+        this.isInvestor = isInvestor;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Double getRealVariation() {
+        return realVariation;
+    }
+
+    public void setRealVariation(Double realVariation) {
+        this.realVariation = realVariation;
+    }
+
+    public Double getRealReturn() {
+        return realReturn;
+    }
+
+    public void setRealReturn(Double realReturn) {
+        this.realReturn = realReturn;
+    }
+
     public User getUser() {
         return user;
     }
@@ -182,6 +226,10 @@ public class NewStockWallet implements Serializable {
             ", expectedReturn='" + expectedReturn + "'" +
             ", expectedVariation='" + expectedVariation + "'" +
             ", sharpRatio='" + sharpRatio + "'" +
+            ", isInvestor='" + isInvestor + "'" +
+            ", description='" + description + "'" +
+            ", realVariation='" + realVariation + "'" +
+            ", realReturn='" + realReturn + "'" +
             '}';
     }
 }

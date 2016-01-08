@@ -51,6 +51,10 @@ angular.module('cabzzaApp')
                 expectedReturn: null,
                 expectedVariation: null,
                 sharpRatio: null,
+                isInvestor: null,
+                description: null,
+                realVariation: null,
+                realReturn: null,
                 id: null
             };
         };

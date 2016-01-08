@@ -44,13 +44,13 @@ public class CalculateService {
             }
             corelation.add(temp);
         }
-        Double data[][] = new Double [corelation.size()][];
+        Double CovariationArray[][] = new Double [corelation.size()][];
 
         for (int i = 0; i < corelation.size(); i++) {
             ArrayList<Double> row = corelation.get(i);
-            data[i] = row.toArray(new Double[row.size()]);
+            CovariationArray[i] = row.toArray(new Double[row.size()]);
         }
-        BasicMatrix <Double> BMcovariance = PrimitiveMatrix.FACTORY.rows(data);
+        BasicMatrix <Double> BMcovariance = PrimitiveMatrix.FACTORY.rows(CovariationArray);
         BasicMatrix <Double> BMreturns = PrimitiveMatrix.FACTORY.rows(expextedReturns);
         MarkowitzModel currentModel = new MarkowitzModel(BMcovariance,BMreturns);
         currentModel.setShortingAllowed(false);
@@ -59,10 +59,38 @@ public class CalculateService {
         else if(startingWallet.getExpectedVariation()!= null)
             currentModel.setTargetVariance(new BigDecimal(startingWallet.getExpectedVariation()));
         List<BigDecimal> weights= currentModel.getWeights();
+        Double expextedReturn = new Double(0);
+        Double expectedVariation = new Double(0);
         for(int m =0; m<portfolioContent.size();m++){
             PortfolioStore currentStock = portfolioContent.get(m);
+            expextedReturn += weights.get(m).doubleValue()*expextedReturns.get(m);
             currentStock.setPercent(weights.get(m).doubleValue()*100);
         }
+        for(int m =0; m<portfolioContent.size();m++) {
+            for (int k = 0; k < portfolioContent.size(); k++) {
+                expectedVariation+=CovariationArray[m][k]*weights.get(m).doubleValue()*weights.get(k).doubleValue();
+            }
+        }
+        expectedVariation = Math.sqrt(expectedVariation);
+        startingWallet.setExpectedVariation(expectedVariation);
+        startingWallet.setExpectedReturn(expextedReturn);
+        startingWallet.setSharpRatio(expextedReturn / expectedVariation * 100);
+        if(!startingWallet.getIsInvestor()) {
+            ArrayList<ArrayList<Double>> realReturns = new ArrayList<>();
+            for (int i = 0; i < portfolioContent.size(); i++) {
+                PortfolioStore content = portfolioContent.get(i);
+                realReturns.add(new ArrayList<Double>() {
+                });
+                realReturns.get(i).addAll(returnsCalculation(filterByDate(new ArrayList<>(content.getStockInfo().getStockQuotess()),
+                    startingWallet.getCalculatingsDate(), startingWallet.getPrognoseDate())));
+            }
+            Double realReturn = new Double(0);
+            for(int k = 0 ; k < portfolioContent.size();k++) {
+                realReturn += (calculateReturn(realReturns.get(k))*weights.get(k).doubleValue());
+            }
+            startingWallet.setRealReturn(realReturn);
+        }
+
         return startingWallet;
     }
 

@@ -50,12 +50,12 @@ angular.module('cabzzaApp')
 			$scope.add = function () {
 				$scope.selectedQuotes.push({"name": $scope.quote.data.name, "symbol": $scope.quote.data.symbol});
 			},
-			$scope.remove = function (quote) {
-				var index  = $scope.selectedQuotes.indexOf(quote);
-				if (index >=0) {
-					$scope.selectedQuotes.splice(index,1);
-				}
-			},
+					$scope.remove = function (quote) {
+						var index = $scope.selectedQuotes.indexOf(quote);
+						if (index >= 0) {
+							$scope.selectedQuotes.splice(index, 1);
+						}
+					},
 					$scope.formSubmit = function () {
 						Account.get().$promise
 								.then(function (account) {
