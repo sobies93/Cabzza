@@ -53,6 +53,7 @@
     "jasmine-core": "2.1.0",
     "zeparser": "0.0.7",
     "wiredep": "2.2.2",
+    "angular-ui-select": "*",
     "ng-sanitize": "*"
   },
   "engines": {
