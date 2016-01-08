@@ -1,4 +1,4 @@
-package com.pri.cabzza.dataproviders.yahoo;
+package com.pri.cabzza.dataproviders.yahoo.partial;
 
 import java.text.SimpleDateFormat;
 
@@ -6,7 +6,14 @@ import java.text.SimpleDateFormat;
  *
  * @author Mikolaj Manski
  */
-public class HistoricalDataUrlBuilder extends AbstractYahooUrlBuilder {
+class HistoricalDataUrlBuilder extends AbstractYahooUrlBuilder {
+
+	private final SimpleDateFormat sdf;
+
+	public HistoricalDataUrlBuilder() {
+		sdf = new SimpleDateFormat("YYYY-MM-dd");
+
+	}
 
 	private static final String URL_PATTERN
 			= "https://query.yahooapis.com/v1/public/yql?q="
@@ -17,8 +24,6 @@ public class HistoricalDataUrlBuilder extends AbstractYahooUrlBuilder {
 
 	@Override
 	public String build() {
-		final SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
 		return String.format(URL_PATTERN, quoteSymbol, sdf.format(startDate), sdf.format(endDate));
 	}
-
 }

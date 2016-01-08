@@ -1,6 +1,5 @@
 package com.pri.cabzza.dataproviders.yahoo.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.pri.cabzza.model.quote.StockQuote;
 
@@ -16,7 +15,6 @@ import lombok.Data;
 @Data
 public class HistoricalDataQuote implements StockQuote {
 
-	@JsonIgnore
 	private String name;
 
 	@JsonProperty("Symbol")
@@ -25,10 +23,8 @@ public class HistoricalDataQuote implements StockQuote {
 	@JsonProperty("Date")
 	private Date date;
 
-	@JsonIgnore
 	private String stockSplit;
 
-	@JsonIgnore
 	private double dividend;
 
 	@JsonProperty("Open")

@@ -92,10 +92,6 @@ public class User extends AbstractAuditingEntity implements Serializable {
 	@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 	private Set<PersistentToken> persistentTokens = new HashSet<>();
 	
-	@OneToMany(mappedBy = "owner")
-	@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-	@Getter @Setter
-	private Set<StockWallet> wallets;
 
 	public Long getId() {
 		return id;

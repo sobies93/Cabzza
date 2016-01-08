@@ -1,8 +1,11 @@
 package com.pri.cabzza.dataproviders;
 
+/**
+ *
+ * @author rasgrass
+ */
 import com.pri.cabzza.dataproviders.exceptions.DataProviderPersistanceException;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -10,8 +13,8 @@ import java.util.List;
  * @author Mikolaj Manski
  * @param <T>
  */
-public interface DataProvider<T extends List<?>> {
+public interface PersistantDataProvider<T extends List<?>> extends DataProvider {
 
-	T getData(String symbol, String market, Date startDate, Date endDate) throws DataProviderPersistanceException;
+	void storeData(T quotes) throws DataProviderPersistanceException;
 
 }

@@ -1,22 +1,29 @@
 package com.pri.cabzza.dataproviders.yahoo;
 
-import com.pri.cabzza.dataproviders.yahoo.model.YahooJsonResult;
+import com.pri.cabzza.dataproviders.yahoo.model.YahooCsvResult;
+import com.pri.cabzza.dataproviders.yahoo.partial.DividendsAndSplitsDataProvider;
+import com.pri.cabzza.dataproviders.yahoo.partial.StockActionType;
 import com.pri.cabzza.dataproviders.yahoo.model.HistoricalDataQuote;
-import com.pri.cabzza.dataproviders.DataProvider;
+import com.pri.cabzza.dataproviders.PersistantDataProvider;
 import com.pri.cabzza.dataproviders.exceptions.DataProviderPersistanceException;
-import com.pri.cabzza.dataproviders.yahoo.model.QueryElement;
-import com.pri.cabzza.dataproviders.yahoo.model.ResultsElement;
-import com.pri.cabzza.model.quote.StockQuote;
+import com.pri.cabzza.dataproviders.yahoo.partial.StockQuotesDataProvider;
+import com.pri.cabzza.domain.StockInfo;
+import com.pri.cabzza.domain.StockQuotes;
+import com.pri.cabzza.repository.StockQuotesRepository;
 
-import java.util.Collections;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 import javax.inject.Singleton;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.elasticsearch.common.collect.Lists;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 /**
  *
@@ -24,52 +31,83 @@ import org.springframework.web.client.RestTemplate;
  */
 @Singleton
 @Service
-public class YahooDataProvider implements DataProvider<List<? extends StockQuote>> {
+@Slf4j
+public class YahooDataProvider implements PersistantDataProvider<List<StockQuotes>> {
 
-	private final RestTemplate restTemplate;
+	@Autowired
+	private StockQuotesRepository stockQuotesRepository;
 
-	public YahooDataProvider() {
-		restTemplate = new RestTemplate();
-		restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+	@Autowired
+	private StockQuotesDataProvider stockQuotesDataProvider;
+
+	@Autowired
+	private DividendsAndSplitsDataProvider dividendsAndSplitsDataProvider;
+
+	@Override
+	public List<StockQuotes> getData(String symbol, String market, Date startDate, Date endDate) throws DataProviderPersistanceException {
+		final List<YahooCsvResult> dividendsAndSplits = dividendsAndSplitsDataProvider.getData(symbol, market, startDate, endDate);
+		final List<HistoricalDataQuote> stockQuotes = stockQuotesDataProvider.getData(symbol, market, startDate, endDate);
+
+		return convertToStockQuotes(mergeCsvAndJsonResults(stockQuotes, dividendsAndSplits), startDate, endDate);
+
 	}
 
 	@Override
-	public List<HistoricalDataQuote> getStockQuotes(String symbol, String market, Date startDate, Date endDate) throws DataProviderPersistanceException {
-
-		final String url = new HistoricalDataUrlBuilder()
-				.withStartDate(startDate)
-				.withEndDate(endDate)
-				.withQuoteSymbol(symbol)
-				.build();
-
-		final ResponseEntity<YahooJsonResult> json = restTemplate.getForEntity(url, YahooJsonResult.class);
-		final YahooJsonResult result = json.getBody();
-		final List<HistoricalDataQuote> quotes = validateAndGetResult(result);
-
-		return quotes;
+	public void storeData(List<StockQuotes> quotes) throws DataProviderPersistanceException {
+		stockQuotesRepository.save(quotes);
 	}
 
-	private List<HistoricalDataQuote> validateAndGetResult(final YahooJsonResult result) throws DataProviderPersistanceException {
-		List<HistoricalDataQuote> quotes = Collections.EMPTY_LIST;
-		QueryElement queryElement = null;
-		ResultsElement resultsElement = null;
-		if (result != null) {
-			queryElement = result.getQuery();
-			if (queryElement != null) {
-				resultsElement = queryElement.getResults();
-				if (resultsElement != null) {
-					quotes = resultsElement.getQuotes();
+	private List<HistoricalDataQuote> mergeCsvAndJsonResults(final List<HistoricalDataQuote> quotes, final List<YahooCsvResult> dividendsAndSplits) throws NumberFormatException {
+		final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+		for (HistoricalDataQuote historicalDataQuote : quotes) {
+			for (YahooCsvResult yahooCsvResult : dividendsAndSplits) {
+				if (sdf.format(historicalDataQuote.getDate()).equals(sdf.format(yahooCsvResult.getDate()))) {
+					if (yahooCsvResult.getType().equals(StockActionType.DIVIDEND)) {
+						historicalDataQuote.setDividend(Double.valueOf(yahooCsvResult.getValue()));
+					} else {
+						historicalDataQuote.setStockSplit(yahooCsvResult.getValue());
+					}
 				}
 			}
 		}
-		if (result == null || queryElement == null || resultsElement == null) {
-			throw new DataProviderPersistanceException("Failed to get valid response");
-		}
 		return quotes;
 	}
 
-	@Override
-	public void storeStockQuote(StockQuote quote) throws DataProviderPersistanceException {
+	private List<StockQuotes> convertToStockQuotes(List<HistoricalDataQuote> historicalDataQuotes, Date startDate, Date endDate) {
+		final List<StockQuotes> result = Lists.newArrayList();
+		for (HistoricalDataQuote historicalDataQuote : historicalDataQuotes) {
+			final StockQuotes stockQuotes = new StockQuotes();
+			stockQuotes.setDate(dateToLocalDate(historicalDataQuote.getDate()));
+			stockQuotes.setDividend(historicalDataQuote.getDividend());
+			stockQuotes.setSplitRate(parseStockSplit(historicalDataQuote.getStockSplit()));
+			stockQuotes.setValue(historicalDataQuote.getClosePrice());
+
+			final StockInfo stockInfo = new StockInfo();
+			stockInfo.setIsInvestorModeAvaiable(Boolean.FALSE);
+			stockInfo.setQuotesEndDate(dateToLocalDate(endDate));
+			stockInfo.setQuotesStartDate(dateToLocalDate(startDate));
+			stockInfo.setName(historicalDataQuote.getName());
+			stockInfo.setSymbol(historicalDataQuote.getSymbol());
+
+			stockQuotes.setStockInfo(stockInfo);
+			result.add(stockQuotes);
+		}
+		return result;
 	}
 
+	private LocalDate dateToLocalDate(Date input) {
+		return input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+	}
+
+	private double parseStockSplit(String stockSplit) {
+		if (StringUtils.isNoneBlank(stockSplit)) {
+			int index = stockSplit.indexOf(":");
+			if (index != -1) {
+				double dividend = Integer.getInteger(Character.toString(stockSplit.charAt(index - 1)));
+				double divider = Integer.getInteger(Character.toString(stockSplit.charAt(index + 1)));
+				return dividend / divider;
+			}
+		}
+		return 1;
+	}
 }

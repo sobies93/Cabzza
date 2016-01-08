@@ -7,8 +7,6 @@ import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -36,7 +34,7 @@ public class StockQuotes implements Serializable {
     @Column(name = "dividend")
     private Double dividend;
 
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     private StockInfo stockInfo;
 
     public Long getId() {
