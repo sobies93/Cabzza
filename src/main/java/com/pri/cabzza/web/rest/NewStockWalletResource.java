@@ -100,7 +100,10 @@ public class NewStockWalletResource {
         portfoliosSet.addAll(portfolios);
         currentWallet.setPortfolioStores(portfoliosSet);
         NewStockWallet result = calculateService.calculate(currentWallet);
-
+        updateNewStockWallet(result);
+        for(PortfolioStore store: result.getPortfolioStores()){
+            portfolioStoreRepository.save(store);
+        }
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("newStockWallet", currentWallet.getId().toString()))
             .body(result);
@@ -121,7 +124,6 @@ public class NewStockWalletResource {
             return createNewStockWallet(newStockWallet);
         }
         NewStockWallet result = newStockWalletRepository.save(newStockWallet);
-        newStockWalletSearchRepository.save(newStockWallet);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("newStockWallet", newStockWallet.getId().toString()))
             .body(result);

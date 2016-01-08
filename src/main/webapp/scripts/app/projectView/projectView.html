@@ -29,7 +29,7 @@
                                 <h6>Stopa zwrotu:</h6>
                             </div>
                             <div class="row">
-                                <h3>{{stockWallet.expectedReturn}}</h3>
+                                <h3>{{roundTwoDigits(stockWallet.expectedReturn)}}</h3>
                             </div>
                         </div>
 
@@ -38,7 +38,7 @@
                                 <h6>Współczynnik Sharpe'a:</h6>
                             </div>
                             <div class="row">
-                                <h3>{{stockWallet.sharpRatio}}</h3>
+                                <h3>{{roundTwoDigits(stockWallet.sharpRatio)}}</h3>
                             </div>
                         </div>
 
@@ -47,7 +47,7 @@
                                 <h6>Odchylenie Standardowe:</h6>
                             </div>
                             <div class="row">
-                                <h3>{{stockWallet.expectedVariation}}</h3>
+                                <h3>{{roundTwoDigits(stockWallet.expectedVariation)}}</h3>
                             </div>
                         </div>
                     </div>

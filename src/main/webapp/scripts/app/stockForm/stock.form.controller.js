@@ -155,7 +155,7 @@ angular.module('cabzzaApp')
                     NewStockWallet.save($scope.$parent.stockWallet, function (data){
                         $scope.addStocks(data.id, function(){
                             Calculation.make({walletId:data.id},function () {
-                                $state.go('projectView');
+                                $state.go('projectView',{id:data.id});
                             });
                         });
 
