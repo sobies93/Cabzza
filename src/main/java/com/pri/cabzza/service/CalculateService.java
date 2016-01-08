@@ -3,6 +3,7 @@ package com.pri.cabzza.service;
 import com.pri.cabzza.domain.NewStockWallet;
 import com.pri.cabzza.domain.PortfolioStore;
 import com.pri.cabzza.domain.StockQuotes;
+import com.pri.cabzza.service.util.StockQuotesComperator;
 import org.ojalgo.finance.portfolio.MarkowitzModel;
 import org.ojalgo.matrix.BasicMatrix;
 import org.ojalgo.matrix.PrimitiveMatrix;
@@ -26,6 +27,7 @@ public class CalculateService {
         List <List<Double>> returns = new ArrayList<>();
         for(int i = 0 ; i < portfolioContent.size();i++) {
             PortfolioStore content = portfolioContent.get(i);
+            returns.add(new ArrayList<Double>() {});
             returns.get(i).addAll(returnsCalculation(filterByDate(new ArrayList<>(content.getStockInfo().getStockQuotess()),
                 startingWallet.getHistoricalDataDate(), startingWallet.getCalculatingsDate())));
         }
@@ -86,15 +88,16 @@ public class CalculateService {
             Double currentSplitRate = (quotes.get(i).getSplitRate()!= null ? quotes.get(i).getSplitRate() : Double.valueOf(1));
             Double currentDividend = (quotes.get(i).getDividend()!= null ? quotes.get(i).getDividend() : Double.valueOf(0));
             returns.add((quotes.get(i).getValue()*currentSplitRate-quotes.get(i-1).getValue()+currentDividend)
-                /quotes.get(i-1).getValue());
+                /quotes.get(i-1).getValue()*100);
         }
         return returns;
     }
 
     private static ArrayList <StockQuotes> filterByDate (List <StockQuotes> allQuotes, LocalDate startDate, LocalDate endDate) {
+        Collections.sort(allQuotes, new StockQuotesComperator());
         ArrayList <StockQuotes> filter = new ArrayList<>();
         for(StockQuotes quote : allQuotes){
-            if(quote.getDate().isAfter(startDate)&&quote.getDate().isBefore(endDate)){
+            if(quote.getDate().isAfter(startDate.minusDays(1))&&quote.getDate().isBefore(endDate.plusDays(1))){
                 filter.add(quote);
             }
         }

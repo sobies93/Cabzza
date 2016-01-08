@@ -70,11 +70,12 @@ angular.module('cabzzaApp')
 
             $scope.calculateData = function (){
                 $scope.$parent.maxDate = new Date();
+                $scope.$parent.currentDate = new Date();
                 $scope.$parent.minDate = new Date("1970-01-01");
                  for(var i = 0; i < $scope.$parent.transferObject.stocks.length; i++){
                         if($scope.$parent.transferObject.isChosen[i]) {
-                            $scope.$parent.maxDate = $scope.getMaxDate($scope.$parent.maxDate, new Date ($scope.$parent.transferObject.stocks[i].quotesStartDate));
-                            $scope.$parent.minDate = $scope.getMinDate($scope.$parent.minDate, new Date ($scope.$parent.transferObject.stocks[i].quotesEndDate));
+                            $scope.$parent.minDate = $scope.getMaxDate($scope.$parent.minDate, new Date ($scope.$parent.transferObject.stocks[i].quotesStartDate));
+                            $scope.$parent.maxDate = $scope.getMinDate($scope.$parent.maxDate, new Date ($scope.$parent.transferObject.stocks[i].quotesEndDate));
                         }
                     }
                     return false;
