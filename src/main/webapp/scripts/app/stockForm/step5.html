@@ -34,30 +34,44 @@
                     <div class="col-sm-6 col-xs-12">
 
                         <div class="row" ng-if = "stockWallet.modeIsInvestor">
-                            <label>Data zakończenia inwestycji</label>
-                            <input ng-model = "stockWallet.prognoseDate" class="date-field input-style" data-format="dd/MM/yyyy" type="date">
+                            <div class="col-sm-offset-1 col-xs-10">
+                                <label>Data zakończenia inwestycji</label>
+                                <input ng-model = "stockWallet.prognoseDate"  class="date-field input-style" data-format="dd/MM/yyyy" type="date">
+                            </div>
                         </div>
 
                         <div class="row" ng-if = "!stockWallet.modeIsInvestor">
-                            <label>Data porównania prognozy</label>
-                            <input ng-model = "stockWallet.prognoseDate" max = "{{maxDate}}" class="date-field input-style" data-format="dd/MM/yyyy" type="date">
+                            <div class="col-sm-offset-1 col-sm-10">
+                                <label>Data porównania prognozy</label>
+                                <input ng-model = "stockWallet.prognoseDate" min = "{{minDate| date:'yyyy-MM-dd'}}" max = "{{maxDate| date:'yyyy-MM-dd'}}" class="date-field input-style" data-format="dd/MM/yyyy" type="date">
+                                </div>
                         </div>
 
                         <div class="row" ng-if = "!stockWallet.modeIsInvestor">
-                            <label>Data rozpoczęcia inwestycji</label>
-                            <input ng-model = "stockWallet.calculatingsDate" min = "{{minDate}}"class="date-field input-style" data-format="dd/MM/yyyy" type="date">
+                            <div class="col-sm-offset-1 col-sm-10">
+                                <label>Data rozpoczęcia inwestycji</label>
+                                <input ng-model = "stockWallet.calculatingsDate" min = "{{minDate| date:'yyyy-MM-dd'}}" max = "{{maxDate| date:'yyyy-MM-dd'}}" class="date-field input-style" data-format="dd/MM/yyyy" type="date">
+                            </div>
                         </div>
 
                         <div class="row" ng-if = "!stockWallet.modeIsInvestor">
-                            <label>Zakres danych historycznych</label>
-                            <input ng-model = "stockWallet.historicalDataDate" min = "{{minDate}}" class="date-field input-style" data-format="dd/MM/yyyy" type="date">
+                            <div class="col-sm-offset-1 col-sm-10">
+                                <label>Zakres danych historycznych</label>
+                                <input ng-model = "stockWallet.historicalDataDate" min = "{{minDate| date:'yyyy-MM-dd'}}" max = "{{maxDate| date:'yyyy-MM-dd'}}" class="date-field input-style" data-format="dd/MM/yyyy" type="date">
+
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-xs-12">
                         <div class="row">
                             <div class="col-sm-offset-1 col-sm-10 description-text">
-                                <textarea ng-model = "stockWallet.description"></textarea>
+                                <label>Opis portfela</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-offset-1 col-sm-10 description-text">
+                                <textarea rows=10 ng-model = "stockWallet.description"></textarea>
                             </div>
                         </div>
                     </div>

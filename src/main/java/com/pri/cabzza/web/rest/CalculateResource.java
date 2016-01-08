@@ -46,7 +46,7 @@ public class CalculateResource {
 
         }
 
-        //just testing MarkovitzModel, will be change in the future
+        //just testing MarkovitzModel, may be removed
         double[][] CArray = {{1.,0.,0.},{0.,0.5,0.},{0.,0.,1.}};
         double[][] RArray = {{1,0,-1}};
         /*BasicMatrix <Double> covariance = PrimitiveMatrix.FACTORY.rows(CArray);

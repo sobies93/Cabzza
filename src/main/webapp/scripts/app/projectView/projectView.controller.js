@@ -140,10 +140,6 @@ angular.module('cabzzaApp')
             //quite weird for sizing the font, but labels make the chart tiny while font is changed only on @mobile and not changed fot 760-1200px vw
             chart.fontSize = 15;
 
-            if ($(window).width() < 1279) {
-            chart.fontSize = $(window).width()/75;
-            }
-
             if ($(window).width() < 768) {
                 chart.labelsEnabled = false;
                 chart.fontSize = 10;
@@ -151,19 +147,19 @@ angular.module('cabzzaApp')
 
             chart.color = "rgba(119,34,17,1)";
             chart.colors = [
-                "#0D52D1",
-                "#2A0CD0",
-                "#8A0CCF",
-                "#CD0D74",
-                "#754DEB",
-                "#DDDDDD",
-                "#999999",
-                "#333333",
-                "#000000",
-                "#57032A",
-                "#CA9726",
-                "#990000",
-                "#4B0C25"
+                "#008000",
+                "#800000",
+                "#FAA460",
+                "#FF4500",
+                "#FFD700",
+                "#FFDEAD",
+                "#006400",
+                "#9ACD32",
+                "#808000",
+                "#90EE90",
+                "#DC143C",
+                "#DAA520",
+                "#FFF8DC"
             ];
 
             // LEGEND
@@ -173,7 +169,7 @@ angular.module('cabzzaApp')
             chart.balloonText = "[[title]]<br><span><b>[[value]]</b> ([[percents]]%)</span>";
             chart.addLegend(legend);
             legend.fontFamily = "Lato-Regular";
-            legend.fontSize = $(window).width()/75;
+            legend.fontSize = 15;
             legend.color = "rgba(119,34,17,1)";
             legend.equalWidths = false;
             if ($(window).width() < 768) {

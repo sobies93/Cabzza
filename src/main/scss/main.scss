@@ -178,6 +178,9 @@ ul#strength {
 /* end of Custom alerts for notification */
 
 /* general styles for Cabzza */
+        .cabzza-background {
+            min-height: 100vh;
+        }
     /* BUTTON */
 
 
@@ -359,7 +362,7 @@ ul#strength {
         font-family:'Lato-Light';
         text-decoration: none;
         text-align: center;
-        color: white;
+        color: rgba(119,34,17,0.6);
     }
     a:hover {
         text-decoration: none;
@@ -472,7 +475,7 @@ ul#strength {
     .part-1 img {
         overflow: hidden;
         padding-top: 10%;
-        width: 120%;
+        width: 100%;
         margin: 0;
         padding: 0;
     }
@@ -511,7 +514,7 @@ ul#strength {
         @media(max-width:768px) {
             .part-1 img {
                 padding-top: 0;
-                width: 140%;
+                width: 100%;
             }
             .part-1 .text-diff-height,
             .part-3 .text-diff-height {
@@ -626,10 +629,12 @@ ul#strength {
 /* footer //////////////////////////////////////////////////////////////////*/
     .footer {
         height: 100%;
-        padding-top: 5%;
+        padding-top: 2%;
+         padding-bottom: 2%;
         background-color: rgba(255,242,220,1);
         text-align: left;
     }
+
     @media(max-width:768px) {
         .footer h4, p {
             text-align: center;
@@ -693,21 +698,30 @@ ul#strength {
         background-color: rgba(119,34,17,0.1); 
     }
 
-    .sliderPositioning {
-        padding-top: 2.5%;
+    .step4input {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
     }
+
+    .button-row-step4 {
+        min-height: 60px;
+
+    }
+ 
     @media(max-width:768px) {
         .input-desc {
             text-align: right;
             padding-top: 5%;
         }
-        .sliderPositioning {
-            padding-left: 0;
-            padding-right: 0;
+        .button-row-step4 {
+        min-height: 110px;
         }
-        .slider-horizontal {
-            vertical-align: middle;
+        .step4input {
+            margin-top: 5%;
         }
+ 
     }
     /*date input styling for step 5*/
     i.dateIcon {
@@ -723,7 +737,7 @@ ul#strength {
         width: 30px;
         height: 40px;
     }
-    .date-field {
+    /*.date-field {
         display: inline-block;
     }
     .input-style.date-field {
@@ -741,10 +755,10 @@ ul#strength {
         }
     }
 
-    /*style for "instructions" on the right of step 5*/
+    /*style for "instructions" on the right of step 5*//*
     .dropdown-menu span:hover {
         background-color: rgba(119,34,17,0.3);
-    }
+    }*/
     /*custom style for dropdown-input*//*
     .dropdown-input .btn {
         width: 50px;
@@ -870,3 +884,4 @@ ul#strength {
         margin-bottom: 3%;
     }
 /* end ofcustom styles for project view */
+
